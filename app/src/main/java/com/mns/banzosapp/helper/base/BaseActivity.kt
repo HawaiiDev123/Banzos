@@ -21,11 +21,9 @@ import com.android.volley.ServerError
 import com.android.volley.VolleyError
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseApp
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.mns.banzosapp.R
 import com.mns.banzosapp.common_util.LogUtil
-import com.mns.banzosapp.common_util.Utils
-import com.mns.banzosapp.custom_views.ChicWikProgressBar
+import com.mns.banzosapp.custom_views.BanzosProgressBar
 import java.io.UnsupportedEncodingException
 
 open class BaseActivity : AppCompatActivity() {
@@ -33,7 +31,7 @@ open class BaseActivity : AppCompatActivity() {
     lateinit var context: Context
     lateinit var viewContext: Context
     lateinit var prefs: ApplicationPrefs
-    lateinit var pDialog: ChicWikProgressBar
+    lateinit var pDialog: BanzosProgressBar
     lateinit var callBackForRetry: CallBackForRetry
     private lateinit var snackbar: Snackbar
     var folderName = "Banzos"
@@ -73,7 +71,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     private fun initProgressDialog() {
-        pDialog = ChicWikProgressBar(this)
+        pDialog = BanzosProgressBar(this)
         pDialog.setCancelable(false)
     }
 

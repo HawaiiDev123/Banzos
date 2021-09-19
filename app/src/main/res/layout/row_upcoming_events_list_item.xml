@@ -15,6 +15,7 @@
             android:background="@color/white" />
 
         <TextView
+            android:id="@+id/textViewUpcomingCounter"
             style="@style/white16spNormalTextStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,15 +38,20 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/textViewUpcomingMonth"
                 style="@style/white14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nov" />
+                android:text="Nov"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
 
             <TextView
+                android:id="@+id/textViewUpcomingDate"
                 style="@style/white16spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:text="12" />
 
         </LinearLayout>
@@ -63,12 +69,14 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/textViewUpcomingTitle"
                 style="@style/white14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Triple Crown of surfing" />
 
             <TextView
+                android:id="@+id/textViewUpcomingLocation"
                 style="@style/white16spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

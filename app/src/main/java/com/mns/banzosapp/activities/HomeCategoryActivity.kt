@@ -19,6 +19,7 @@ import com.mns.banzosapp.activities.pointOfInterest.PointOfInterestActivity
 import com.mns.banzosapp.activities.servicesAndRental.valueServices.ValueServicesActivity
 import com.mns.banzosapp.activities.wildlife.WildlifeActivity
 import com.mns.banzosapp.adapters.HomeCategoryListAdapter
+import com.mns.banzosapp.utils.Global
 import kotlinx.android.synthetic.main.activity_home_category_trial.*
 
 class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
@@ -178,12 +179,12 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
         when (view?.id) {
             R.id.ll_information -> {
                 val intent = Intent(this, IntroductionActivity::class.java)
-                intent.putExtra("come_from", "intro")
+                intent.putExtra(Global.COMEFROM, "intro")
                 startActivity(intent)
             }
             R.id.ll_generalInfo -> {
                 val intent = Intent(this, IntroductionActivity::class.java)
-                intent.putExtra("come_from", "gen_info")
+                intent.putExtra(Global.COMEFROM, "gen_info")
                 startActivity(intent)
             }
             R.id.ll_citiesTowns -> {

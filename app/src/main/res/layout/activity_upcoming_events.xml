@@ -19,6 +19,7 @@
 
 
             <TextView
+                android:id="@+id/textViewUpcomingTitle"
                 style="@style/primaryDarkColor18spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
                 android:text="Upcoming Events on the Big Island" />
 
             <TextView
+                android:id="@+id/textViewUpcomingDescription"
                 style="@style/grey60_14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

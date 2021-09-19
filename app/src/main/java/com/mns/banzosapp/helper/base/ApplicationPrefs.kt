@@ -13,6 +13,7 @@ class ApplicationPrefs(private val context: Context) {
     private val USER_DETAILS = "user_details"
     private val FCM_TOKEN = "fcm_token"
     private val USER_TOKEN = "user_token"
+    private val ISLAND_ID = "mild_id"
 
     fun setUserId(userId: String?) {
         setPreferencesData(USER_ID, userId)
@@ -38,6 +39,14 @@ class ApplicationPrefs(private val context: Context) {
 
     fun getFCMToken(): String? {
         return getPreferenceData(FCM_TOKEN, "")
+    }
+
+    fun setIslandId(islandId: String?) {
+        setPreferencesData(ISLAND_ID, islandId)
+    }
+
+    fun getIslandId(): String? {
+        return getPreferenceData(ISLAND_ID, "")
     }
 
     fun isLogin(): Boolean {

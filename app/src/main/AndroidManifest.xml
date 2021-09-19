@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity"
         tools:replace="android:allowBackup">
+        <activity
+            android:name=".activities.IntroductionDetailsActivity"
+            android:exported="true" />
         <activity android:name=".activities.servicesAndRental.ServicesAndRentalMainActivity" />
         <activity android:name=".activities.servicesAndRental.rental.RentalActivity" />
         <activity android:name=".activities.VacationPackageActivity" />

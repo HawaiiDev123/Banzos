@@ -16,8 +16,8 @@ abstract class AppBaseActivity : BaseActivity() {
 
     fun getLoginParam(): HashMap<String, String> {
         val param = HashMap<String, String>()
-        param["customer_id"] = prefs.getUserId()!!
-        param["Authorization"] = "Bearer " + prefs.getUserToken()!!
+        /*param["customer_id"] = prefs.getUserId()!!
+        param["Authorization"] = "Bearer " + prefs.getUserToken()!!*/
         return param
     }
 
