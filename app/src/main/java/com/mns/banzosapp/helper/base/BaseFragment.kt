@@ -26,7 +26,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.mns.banzosapp.R
 import com.mns.banzosapp.common_util.LogUtil
 import com.mns.banzosapp.common_util.Utils
-import com.mns.banzosapp.custom_views.ChicWikProgressBar
+import com.mns.banzosapp.custom_views.BanzosProgressBar
 import java.io.UnsupportedEncodingException
 
 open class BaseFragment : Fragment() {
@@ -34,7 +34,7 @@ open class BaseFragment : Fragment() {
     private lateinit var context1: Context
     lateinit var viewContext: Context
     lateinit var prefs: ApplicationPrefs
-    lateinit var pDialog: ChicWikProgressBar
+    lateinit var pDialog: BanzosProgressBar
     lateinit var callBackForRetry: CallBackForRetry
     private lateinit var snackbar: Snackbar
     var folderName = "Banzos"
@@ -147,7 +147,7 @@ open class BaseFragment : Fragment() {
     }
 
     private fun initProgressDialog() {
-        pDialog = ChicWikProgressBar(viewContext)
+        pDialog = BanzosProgressBar(viewContext)
         pDialog.setCancelable(true)
     }
 

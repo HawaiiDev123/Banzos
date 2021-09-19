@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <FrameLayout
+            android:id="@+id/fl_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_home_background_trial" />
+
+
+        </FrameLayout>
+
+        <!-- <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/rv_home"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_marginTop="-20dp"
+             android:layout_weight="1.2"
+             android:translationZ="-1dp" />-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_information"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample1" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Introduction" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_generalInfo"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample2" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="General Information" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_citiesTowns"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample4" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Cities-Towns" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_beaches"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample5" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Beaches" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_adventure"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample6" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Adventures" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_activities"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample2" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Activities-Tours" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_combo"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample2" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Combos" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_diningFood"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample4" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Dining-Food" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pointOfInterest"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample3" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Point Of Interest" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_wildlife"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample6" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Wildlife" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_lodging"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample5" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Lodging" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_otherThings"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample1" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Other Things To Do" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_myHawaii"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample6" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="My Hawaii" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_favTrips"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample2" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Favorite Trips" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_valueServices"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample4" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Services" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_healthSafety"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample3" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Health And Safety" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_upcomingEvents"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample1" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Upcoming Events" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_vacationPackage"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample1" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Vacation Packages" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_recentlyViewed"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample6" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Recently Viewed" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_customisedTravel"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample3" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Customised Travel" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_merchandise"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rectangle_bg_white"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_gravity="top"
+                            android:padding="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_sample1" />
+
+                        <TextView
+                            style="@style/black12spNormalTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Merchandise" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>

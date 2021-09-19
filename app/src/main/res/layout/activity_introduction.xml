@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,6 +25,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/imageViewIntroductionMain"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:scaleType="centerCrop"
@@ -84,6 +86,7 @@
             </FrameLayout>
 
             <TextView
+                android:id="@+id/textViewIntroductionTitle"
                 style="@style/primaryDarkColor18spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,6 +95,7 @@
                 android:text="Introduction" />
 
             <TextView
+                android:id="@+id/textViewIntroductionDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,206 +107,15 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content" />-->
 
-            <LinearLayout
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewIntroductionMainItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/light_blue"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-                <TextView
-                    style="@style/primaryDarkColor14spNormalTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0.9"
-                    android:gravity="start"
-                    android:padding="10dp"
-                    android:text="ABC " />
 
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_arrow_right_black"
-                        android:visibility="visible" />
-
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/light_blue"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/primaryDarkColor14spNormalTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0.9"
-                    android:gravity="start"
-                    android:padding="10dp"
-                    android:text="ABC " />
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_arrow_right_black"
-                        android:visibility="visible" />
-
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/light_blue"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/primaryDarkColor14spNormalTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0.9"
-                    android:gravity="start"
-                    android:padding="10dp"
-                    android:text="ABC " />
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_arrow_right_black"
-                        android:visibility="visible" />
-
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/light_blue"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/primaryDarkColor14spNormalTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0.9"
-                    android:gravity="start"
-                    android:padding="10dp"
-                    android:text="ABC " />
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_arrow_right_black"
-                        android:visibility="visible" />
-
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/light_blue"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/primaryDarkColor14spNormalTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="0.9"
-                    android:gravity="start"
-                    android:padding="10dp"
-                    android:text="ABC " />
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0.1"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/ic_arrow_right_black"
-                        android:visibility="visible" />
-
-                </FrameLayout>
-
-            </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

@@ -25,4 +25,6 @@ object AppConstants {
     const val DisplayFormatWithMonthName = "dd MMM. yyyy"
     const val DisplayFormatWithMonthNameAndTime = "dd MMM. yyyy hh:mm a"
     const val DisplayFormatOnlyDateAndMonth = "dd MMM."
+    const val DisplayFormatOnlyDate = "dd"
+    const val DisplayFormatOnlyMonth = "MMM"
 }

@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.beach.BeachListActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-20dp"
+        android:translationZ="-1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vp_imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tl_imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabSelectedTextColor="@android:color/transparent"
+                        app:tabTextColor="@android:color/transparent" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@color/white"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="20dp"
+                    android:src="@drawable/ic_rental" />
+
+            </FrameLayout>
+
+            <TextView
+                style="@style/primaryDarkColor16spBoldTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="Rentals" />
+
+            <TextView
+                style="@style/black14spNormalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/dummy_one_para" />
+
+            <RelativeLayout
+                android:id="@+id/rl_withEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/rectangle_bg_grey_outline"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="1dp"
+                        android:layout_weight="0.9"
+                        android:background="@color/grey_5"
+                        android:cursorVisible="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="Search"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <!--  <ImageView
+                              android:id="@+id/btn_search"
+                              android:layout_width="0dp"
+                              android:layout_height="18dp"
+                              android:layout_weight="0.1"
+                              android:src="@drawable/ic_search_black"
+                              android:layout_gravity="center"
+                              android:layout_margin="5dp"/>-->
+
+                    <ImageView
+                        android:id="@+id/iv_closeSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_search_white"
+                        android:tint="@color/grey_40" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/sky_blue"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_rentals"
+                    style="@style/MyTabLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="top"
+                    app:tabGravity="fill"
+                    app:tabIndicatorGravity="top"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextAppearance="@style/white12spNormalTabTextStyle"
+                    app:tabTextColor="@color/sky_blue" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-25dp"
+                    android:src="@drawable/ic_tab_bg_trial" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_beach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/ll_beachSnorkeling"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/rectangle_bg_white_top"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Snorkeing"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Snorkel Mask, Tube n Fins"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_beachBeachGear"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rectangle_bg_outline_top"
+                                android:gravity="top|center_horizontal"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Beach Gear"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Chair cooler sports"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_beachSurfBoards"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rectangle_bg_outline_top"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SURFBOARDS"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="All shapes And Sizes"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_beachSUPs"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rectangle_bg_outline_top"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SUPs"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="stand up paddle board"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_snorkelling"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                style="@style/primaryDarkColor18spBoldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:gravity="center"
+                                android:text="Exclusive Online Offer"
+                                android:textAllCaps="true" />
+
+                            <TextView
+                                style="@style/black12spNormalTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:text="The offer beats all competitor 2 for 1 and 50% off deals" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_targetedFish"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:elevation="0dp"
+                                android:visibility="visible"
+                                app:cardBackgroundColor="@color/colorPrimaryDark">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="10dp">
+
+                                        <TextView
+                                            style="@style/white18spBoldTextStyle"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:gravity="center"
+                                            android:text="Deluxe Snorkel Rental"
+                                            android:textAllCaps="true" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:background="@color/white"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_sample2"
+                                android:visibility="visible" />
+
+                            <TextView
+                                style="@style/black14spBoldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:gravity="center"
+                                android:text="Deluxe Snorkel Rental $9/day or $27/wk\nReserve Now."
+                                android:textAllCaps="true" />
+
+                            <TextView
+                                style="@style/primaryDarkColor12spNormalTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:text="@string/dummy_two_lines" />
+
+                            <TextView
+                                style="@style/primaryColor12spBoldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:text="@string/dummy_one_line" />
+
+                            <TextView
+                                style="@style/black12spNormalTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:text="@string/dummy_one_line" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/grey_10"
+                                    android:orientation="vertical"
+                                    android:padding="15dp">
+
+                                    <TextView
+                                        style="@style/black10spNormalTextStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:gravity="center"
+                                        android:text="Rental Pricing: 1 day $9, 2 days $18, 3-9 $27, 10-13 days $35, 14 days $44" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup date"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_purposeOfTrip"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup location"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_pickUpLocation"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:background="@drawable/rectangle_bg_primarydark"
+                                    android:text="Proceed To Checkout"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_beachGear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_beachBeachGearList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_surfBoards"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:background="@color/white"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_sample2"
+                                android:visibility="visible" />
+
+                            <TextView
+                                style="@style/primaryDarkColor14spBoldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:gravity="center"
+                                android:text="Surfboard Rentals from $20/day or $75/wk\nReserve Now."
+                                android:textAllCaps="true" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="How tall are you?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_howTallAreyou"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="What is your weight?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_weight"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a Bicycle Type?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_bicycleType"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup date"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_pickUpDateSurfboard"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup location"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_pickUpLocationSurfBoard"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <Button
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:background="@drawable/rectangle_bg_primarydark"
+                                    android:text="Proceed To Checkout"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_SUPs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:background="@color/white"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_services_rental"
+                                android:visibility="visible" />
+
+                            <TextView
+                                style="@style/primaryDarkColor14spBoldTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:gravity="center"
+                                android:text="Stand Up Paddle Rentals from $29.95/day or $150/wk\nReserve Now."
+                                android:textAllCaps="true" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="How tall are you?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_howTallAreyouSUP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="What is your weight?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_weightSUP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a Bicycle Type?"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_bicycleTypeSUP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup date"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_pickUpDateSUP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Select a pickup location"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="45dp"
+                                        android:layout_marginTop="5dp"
+                                        android:gravity="center">
+
+                                        <EditText
+                                            android:id="@+id/et_pickUpLocationSUP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:background="@drawable/rectangle_bg_light_grey_outline"
+                                            android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                                            android:inputType="text"
+                                            android:padding="10dp" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/btn_checkoutSUP"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:background="@drawable/rectangle_bg_primarydark"
+                                    android:text="Proceed To Checkout"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_babyGear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_babyGearList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mns.banzosapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".helper.app.AppController"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity"
+        tools:replace="android:allowBackup">
+        <activity android:name=".activities.servicesAndRental.ServicesAndRentalMainActivity" />
+        <activity android:name=".activities.servicesAndRental.rental.RentalActivity" />
+        <activity android:name=".activities.VacationPackageActivity" />
+        <activity android:name=".activities.cart.ShoppingCartActivity" />
+        <activity android:name=".activities.cart.AddToCartActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.WhatsBitingWidgetActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.TargetedFishActivity" />
+        <activity android:name=".activities.gift.GiveAsGiftActivity" />
+        <activity android:name=".activities.gift.GiftCartActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.BoatProfileDetailActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.BoatTournamentActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.BoatCaptainBioActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.BoatPoliciesFeesActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.BoatInformationActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.PrivateFishingActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.TripMainActivity" />
+        <activity android:name=".activities.activitiesAndTours.ActivitiesTourSelectionActivity" />
+        <activity android:name=".activities.CustomizedTravelActivity" />
+        <activity android:name=".activities.RecentlyViewedActivity" />
+        <activity android:name=".activities.healthSafety.HealthSafetyActivity" />
+        <activity android:name=".activities.diningFood.RestaurantDetailActivity" />
+        <activity android:name=".activities.activitiesAndTours.fishingTrip.SharedFishingActivity" />
+        <activity android:name=".activities.UpcomingEventsActivity" />
+        <activity android:name=".activities.servicesAndRental.valueServices.FishMountOrderFormActivity" />
+        <activity android:name=".activities.servicesAndRental.valueServices.LEIOrderFormActivity" />
+        <activity android:name=".activities.servicesAndRental.valueServices.ValueServicesActivity" />
+        <activity android:name=".activities.lodging.LodgingDetailActivity" />
+        <activity android:name=".activities.lodging.AmenitiesActivity" />
+        <activity android:name=".activities.lodging.LodgingListActivity" />
+        <activity android:name=".activities.FavoriteTripsActivity" />
+        <activity android:name=".activities.FeedbackActivity" />
+        <activity android:name=".activities.EditProfileActivity" />
+        <activity android:name=".activities.MyHawaiiActivity" />
+        <activity android:name=".activities.otherThingsToDo.OtherThingsToDoActivity" />
+        <activity android:name=".activities.lodging.LodgingMainActivity" />
+        <activity android:name=".activities.wildlife.WildlifeDetailActivity" />
+        <activity android:name=".activities.wildlife.WildlifeActivity" />
+        <activity android:name=".activities.pointOfInterest.PointOfInterestActivity" />
+        <activity android:name=".activities.diningFood.DiningAndFoodActivity" />
+        <activity android:name=".activities.combo.CreateOwnComboActivity" />
+        <activity android:name=".activities.combo.MostPopularDetailActivity" />
+        <activity android:name=".activities.combo.MostPopularComboListActivity" />
+        <activity android:name=".activities.combo.ComboMainActivity" />
+        <activity android:name=".activities.activitiesAndTours.ActivityListActivity" />
+        <activity android:name=".activities.activitiesAndTours.ActivityDetailActivity" />
+        <activity android:name=".activities.activitiesAndTours.ActivityMainActivity" />
+        <activity android:name=".activities.adventure.AdventureDetailActivity" />
+        <activity android:name=".activities.adventure.AdventureActivity" />
+        <activity android:name=".activities.beach.BeachDetailActivity" />
+        <activity android:name=".activities.beach.BeachListActivity" />
+        <activity android:name=".activities.citiesTown.CitiesTownActivity" />
+        <activity android:name=".activities.citiesTown.CitiesTownDetailActivity" />
+        <activity android:name=".activities.IntroductionActivity" />
+        <activity android:name=".activities.HomeCategoryActivity" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.TutorialActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.SignUpActivity" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.MainActivity" />
+    </application>
+
+</manifest>

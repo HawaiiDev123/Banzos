@@ -53,8 +53,4 @@ class AdapterIslandListHome(islandList: MutableList<IslandDetails>) :
     interface IslandListener {
         fun onView(islandDetails: IslandDetails)
     }
-
-    /*val intent = Intent(context, HomeCategoryActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            context.startActivity(intent)*/
 }
