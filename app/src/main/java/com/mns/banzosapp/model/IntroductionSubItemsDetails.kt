@@ -14,7 +14,7 @@ class IntroductionSubItemsDetails : CommonResponse() {
     var title: String? = null
 
     @SerializedName("image")
-    var image: List<CommonSliderDetails>? = ArrayList()
+    var image: MutableList<CommonSliderDetails> = ArrayList()
 
     @SerializedName("description")
     var description: String? = null

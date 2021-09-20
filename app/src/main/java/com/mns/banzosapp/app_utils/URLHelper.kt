@@ -1,5 +1,10 @@
 package com.mns.banzosapp.app_utils
 
+/**
+ * Created by HusJCha
+ * https://rajinfotech53.com
+ * **/
+
 object URLHelper {
 
     private const val PROTOCOL = "https://"
@@ -9,9 +14,8 @@ object URLHelper {
     private const val API = "api/"
 
     private const val HostMainAddress = PROTOCOL + HOST + HOST_BASE + API
-//    private const val ImageMainAddress = PROTOCOL + HOST + HOST_BASE
 
-
+    
     //Image URLs
     var ISLAND_IMAGE_URL = ""
 

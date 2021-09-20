@@ -11,7 +11,19 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.mns.banzosapp.model.** { <fields>; }
 
+-keep class com.crashlytics.** { *; }
+-keepattributes SourceFile,LineNumberTable
+-assumenosideeffects class com.android.volley.VolleyLog {
+    public static void v(...);
+    public static void d(...);
+    public static void i(...);
+    public static void w(...);
+    public static void e(...);
+}
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
 #-keepattributes SourceFile,LineNumberTable

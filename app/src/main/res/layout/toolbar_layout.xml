@@ -1,58 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_toolbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="@dimen/_55sdp"
+    android:background="@drawable/ic_toolbar_bg">
 
-    <RelativeLayout
-        android:id="@+id/rl_toolbar"
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_10sdp"
+        app:srcCompat="@drawable/ic_back_white" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/white18spBoldTextStyle"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_toolbar_bg">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_toEndOf="@+id/iv_back"
+        android:ellipsize="end"
+        android:gravity="top|center_horizontal"
+        android:maxLines="1"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/lorem_title"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_12sdp" />
 
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/ic_back_white" />
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@+id/iv_filter"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_search_white" />
 
-        <TextView
-            android:id="@+id/tv_title"
-            style="@style/white18spBoldTextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
-            android:layout_toEndOf="@+id/iv_back"
-            android:ellipsize="end"
-            android:gravity="top|center_horizontal"
-            android:maxLines="1"
-            android:padding="10dp"
-            android:text="Introduction"
-            android:textAllCaps="true"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/iv_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_toStartOf="@+id/iv_filter"
-            app:srcCompat="@drawable/ic_search_white" />
-
-        <ImageView
-            android:id="@+id/iv_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/ic_hamburger_white" />
-    </RelativeLayout>
-
-</LinearLayout>
+    <ImageView
+        android:id="@+id/iv_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/ic_hamburger_white" />
+</RelativeLayout>

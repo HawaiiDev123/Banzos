@@ -1,0 +1,3 @@
+Password : Banzos@Hawaii#2021*
+Alias : banzos_hawaii
+Path : J:\Android\WorkingProjects\Banzos\key_store\banzos_key_store.jks

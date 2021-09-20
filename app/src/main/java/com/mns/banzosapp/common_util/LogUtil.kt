@@ -1,14 +1,15 @@
 package com.mns.banzosapp.common_util
 
 import android.util.Log
+import com.mns.banzosapp.BuildConfig
 
 object LogUtil {
 
     private val TAG = "BanzosLog"
     private val ERROR_RECEIVER_NOT_REGISTERED = "Receiver not registered"
-    private val DEBUG: Boolean = true;//BuildConfig.DEBUG
-    private val DEBUG2: Boolean = true;//BuildConfig.DEBUG
-    private val DEBUG_ERROR: Boolean = true;//BuildConfig.DEBUG
+    private val DEBUG: Boolean = BuildConfig.DEBUG
+    private val DEBUG2: Boolean = BuildConfig.DEBUG
+    private val DEBUG_ERROR: Boolean = BuildConfig.DEBUG
 
     public fun debug(msg: String) {
         if (DEBUG && msg != null && msg != "") {

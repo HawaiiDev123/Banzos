@@ -2,6 +2,11 @@ package com.mns.banzosapp.app_utils;
 
 import android.os.Build
 
+/**
+ * Created by HusJCha
+ * https://rajinfotech53.com
+ * **/
+
 object AppConstants {
 
     //Request Code
@@ -10,6 +15,13 @@ object AppConstants {
 
     //Intent Names
     const val INTENT_USER_DETAILS = "userDetails"
+    const val INTENT_FROM_NAME = "fromName"
+    const val INTENT_INTRODUCTION_DETAILS = "introductionDetails"
+
+
+    //Screen Names
+    const val SCREEN_INTRODUCTION = "introductionScreen"
+    const val SCREEN_GENERAL_INFORMATION = "generalInformationScreen"
 
 
     //Date & Time Formats

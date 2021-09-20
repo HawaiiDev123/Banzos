@@ -48,7 +48,7 @@ class HomeActivity : AppBaseActivity() {
     override fun clickListeners() {
         adapterIslandListHome.setListener(object : AdapterIslandListHome.IslandListener {
             override fun onView(islandDetails: IslandDetails) {
-                prefs.setIslandId(islandDetails.mild_id)
+                prefs.setIslandId(islandDetails.mild_id.toString())
                 val intent = Intent(this@HomeActivity, HomeCategoryActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)

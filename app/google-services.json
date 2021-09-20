@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "728847478164",
+    "project_id": "banzos-8b797",
+    "storage_bucket": "banzos-8b797.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728847478164:android:a34dd7e4bd55fdf512f381",
+        "android_client_info": {
+          "package_name": "com.mns.banzosapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728847478164-r8eg2ciffdmi9gjomo0s33qnc2pr4qou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mns.banzosapp",
+            "certificate_hash": "8f3ad583e00f25ea19cdc591aa7be2f432e8d0b4"
+          }
+        },
+        {
+          "client_id": "728847478164-h9e5as3jmcl51ehen0u7tmmhk1vft0jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc0FAGA1v-JbsPgezFB6g8UihJe_EjbJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728847478164-h9e5as3jmcl51ehen0u7tmmhk1vft0jv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

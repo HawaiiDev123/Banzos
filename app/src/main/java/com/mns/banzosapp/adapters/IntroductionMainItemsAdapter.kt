@@ -12,7 +12,7 @@ import com.mns.banzosapp.model.IntroductionSubItemsDetails
 class IntroductionMainItemsAdapter(introductionSubItemsDetailsList: MutableList<IntroductionSubItemsDetails>) :
     BaseAdapter<IntroductionSubItemsDetails>(introductionSubItemsDetailsList) {
 
-    private lateinit var introductionListener: IntroductionListener;
+    private lateinit var introductionListener: IntroductionListener
 
     fun setListener(introductionListener: IntroductionListener) {
         this.introductionListener = introductionListener
@@ -31,7 +31,6 @@ class IntroductionMainItemsAdapter(introductionSubItemsDetailsList: MutableList<
     ) {
         val holder = holderBase as IntroductionViewHolder
         holder.textViewSubItemsTitle.text = baseValue.title
-
     }
 
     inner class IntroductionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -39,7 +38,7 @@ class IntroductionMainItemsAdapter(introductionSubItemsDetailsList: MutableList<
 
         init {
             itemView.setOnClickListener {
-                    introductionListener.onView(getItem(adapterPosition))
+                introductionListener.onView(getItem(adapterPosition))
             }
         }
     }

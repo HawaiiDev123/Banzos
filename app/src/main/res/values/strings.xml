@@ -19,5 +19,7 @@
     <string name="price_as_low_as_236_per_spot">Price as low as  <font color="red" size="14"><b>$236</b></font> per spot</string>
     <string name="retry">Retry</string>
     <string name="error_message">Please try again later</string>
-
+    <string name="title_introduction">Introduction</string>
+    <string name="title_general_information">General Information</string>
+    <string name="lorem_title">Introduction</string>
 </resources>

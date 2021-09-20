@@ -27,9 +27,7 @@ class Global {
     companion object {
 
         var TAG: String? = "Banzo App"
-        var INTRODETAILS: String? = "intro_details";
         var IMAGEBASEURL: String? = "imagebaseurl";
-        var COMEFROM: String? = "come_from";
         /*fun showProgressBar(context: Context, progressDialog: Dialog?) {
             *//*val pd = Dialog(context, android.R.style.Theme_Black)*//*
             val view = LayoutInflater.from(context).inflate(R.layout.my_progress, null)

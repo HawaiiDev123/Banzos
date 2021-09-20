@@ -41,7 +41,7 @@ class ApplicationPrefs(private val context: Context) {
         return getPreferenceData(FCM_TOKEN, "")
     }
 
-    fun setIslandId(islandId: String?) {
+    fun setIslandId(islandId: String) {
         setPreferencesData(ISLAND_ID, islandId)
     }
 

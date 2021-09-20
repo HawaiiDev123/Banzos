@@ -22,6 +22,7 @@ import com.mns.banzosapp.activities.otherThingsToDo.OtherThingsToDoActivity
 import com.mns.banzosapp.activities.pointOfInterest.PointOfInterestActivity
 import com.mns.banzosapp.activities.servicesAndRental.ServicesAndRentalMainActivity
 import com.mns.banzosapp.activities.wildlife.WildlifeActivity
+import com.mns.banzosapp.app_utils.AppConstants
 import kotlinx.android.synthetic.main.row_home_category_list_item.view.*
 
 class HomeCategoryListAdapter(
@@ -49,13 +50,16 @@ class HomeCategoryListAdapter(
             when (position) {
                 0 -> {
                     val intent = Intent(context, IntroductionActivity::class.java)
-                    intent.putExtra("come_from", "intro")
+                    intent.putExtra(AppConstants.INTENT_FROM_NAME, AppConstants.SCREEN_INTRODUCTION)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     context.startActivity(intent)
                 }
                 1 -> {
                     val intent = Intent(context, IntroductionActivity::class.java)
-                    intent.putExtra("come_from", "gen_info")
+                    intent.putExtra(
+                        AppConstants.INTENT_FROM_NAME,
+                        AppConstants.SCREEN_GENERAL_INFORMATION
+                    )
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     context.startActivity(intent)
                 }

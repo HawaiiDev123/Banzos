@@ -1,6 +1,10 @@
 package com.mns.banzosapp.common_util
 
 import android.content.res.Resources
+import android.os.Build
+import android.text.Html
+import android.text.SpannableString
+import android.text.Spanned
 import com.mns.banzosapp.common_util.LogUtil.debug2
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -79,6 +83,20 @@ object Utils {
         return if (error != null && error.length > 2000) {
             error.substring(0, 2000)
         } else error ?: ""
+    }
+
+    fun fromHtml(html: String?): Spanned? {
+        return when {
+            html == null -> {
+                SpannableString("")
+            }
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> {
+                Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+            }
+            else -> {
+                Html.fromHtml(html)
+            }
+        }
     }
 
     /*fun getMonthName(calander: Calendar): String? {
