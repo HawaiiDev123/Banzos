@@ -29,7 +29,7 @@ class UpcomingEventsActivity : AppBaseActivity(), View.OnClickListener {
     }
 
     override fun initializeAllView() {
-        tv_title.text = "Upcoming Events"
+        tv_title.text = getString(R.string.title_upcoming_events)
         setListsAndAdapters()
     }
 
@@ -54,7 +54,6 @@ class UpcomingEventsActivity : AppBaseActivity(), View.OnClickListener {
     private fun processToLoadUpcomingEventList() {
         showProgressDialog()
         val param = getLoginParam()
-        param.put("mild_id", prefs.getIslandId().toString().trim())
 
         FetchItem(object : FetchItem.ListCommunicatorInterface<UpcomingEventDetails> {
             override fun onError(error: VolleyError) {

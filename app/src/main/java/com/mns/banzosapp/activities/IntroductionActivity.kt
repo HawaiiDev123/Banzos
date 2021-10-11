@@ -30,15 +30,11 @@ class IntroductionActivity : AppBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
-        //TODO FOR_KK = Use AppConstants instead of GLOBAL
-        //TODO FOR_KK = Don't use direct strings use constants for conditions like "intro"
-        //TODO FOR_KK = Don't use direct strings use strings.xml for any string that is displayed on screen
-        fromName = intent.getStringExtra(AppConstants.INTENT_FROM_NAME)
+         fromName = intent.getStringExtra(AppConstants.INTENT_FROM_NAME)
         if (fromName == null) {
             finish()
         }
         if (fromName?.equals(AppConstants.SCREEN_INTRODUCTION)!!) {
-            //TODO For_KK = Add "title_" prefix for screen titles
             updateToolbar(getString(R.string.title_introduction))
         } else {
             updateToolbar(getString(R.string.title_general_information))
@@ -69,10 +65,7 @@ class IntroductionActivity : AppBaseActivity() {
     private fun processToLoadIntroductionList() {
         showProgressDialog()
         val param = getLoginParam()
-        //TODO FOR_KK = Don't use param.put() use param[""] instead
-        //TODO FOR_KK = Also you can use inline if instead of ternary operator see below in url
-        //TODO FOR_KK = No need to give mild_id here check getLoginParam()
-        FetchItem(object : FetchItem.ListCommunicatorInterface<IntroductionDetails> {
+          FetchItem(object : FetchItem.ListCommunicatorInterface<IntroductionDetails> {
             override fun onError(error: VolleyError) {
                 showErrorMessage(error)
             }
@@ -82,7 +75,7 @@ class IntroductionActivity : AppBaseActivity() {
                 URLHelper.ISLAND_IMAGE_URL = fetchedDetails.meta?.image_base_url.toString()
                 introductionSubItemsDetailsList.addAll(fetchedDetails.list)
                 introductionMainItemsAdapter.notifyDataSetChanged()
-                //TODO FOR_KK = Use Utils.fromHtml instead of Html.fromHtml
+
                 textViewIntroductionDescription.text = Utils.fromHtml(fetchedDetails.introduction)
                 enableSlider(fetchedDetails.slider_base_url, fetchedDetails.sliders)
             }

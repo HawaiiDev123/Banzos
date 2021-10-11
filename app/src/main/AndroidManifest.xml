@@ -18,6 +18,9 @@
         tools:ignore="LockedOrientationActivity"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".activities.pointOfInterest.PointOfInterestDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.IntroductionDetailsActivity"
             android:exported="true" />
         <activity android:name=".activities.servicesAndRental.ServicesAndRentalMainActivity" />

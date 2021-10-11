@@ -17,6 +17,7 @@ object AppConstants {
     const val INTENT_USER_DETAILS = "userDetails"
     const val INTENT_FROM_NAME = "fromName"
     const val INTENT_INTRODUCTION_DETAILS = "introductionDetails"
+    const val INTENT_CITY_TOWN_DETAILS = "cityTownDetails"
 
 
     //Screen Names

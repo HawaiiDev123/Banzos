@@ -29,6 +29,10 @@ object URLHelper {
 
     val FETCH_UPCOMING_EVENT = HostMainAddress + "upcoming_events_list"
 
+    val FETCH_CITY_TOWN = HostMainAddress + "cities_towns_details"
+
+    val FETCH_POINT_OF_INTEREST = HostMainAddress + "point_of_interest_details"
+
 
     //Add APIs
 

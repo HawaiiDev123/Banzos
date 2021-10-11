@@ -5,31 +5,108 @@ import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.VolleyError
+import com.google.android.material.tabs.TabLayout
 import com.mns.banzosapp.R
-import com.mns.banzosapp.activities.adventure.AdventureDetailActivity
+import com.mns.banzosapp.activities.citiesTown.CitiesTownDetailActivity
+import com.mns.banzosapp.adapters.CityListItemAdapter
+import com.mns.banzosapp.app_utils.AppConstants
+import com.mns.banzosapp.app_utils.URLHelper
+import com.mns.banzosapp.common_util.Utils
+import com.mns.banzosapp.helper.base.AppBaseActivity
+import com.mns.banzosapp.helper.base.CallBackForRetry
+import com.mns.banzosapp.helper.http.FetchItem
+import com.mns.banzosapp.model.CityDetails
+import com.mns.banzosapp.model.CityRegionDetails
+import com.mns.banzosapp.model.CityRegionInsideDetails
+import kotlinx.android.synthetic.main.activity_cities_town.*
 import kotlinx.android.synthetic.main.activity_point_of_interest.*
+import kotlinx.android.synthetic.main.activity_point_of_interest.tl_direction
 import kotlinx.android.synthetic.main.toolbar_layout.*
 
-class PointOfInterestActivity : AppCompatActivity(), View.OnClickListener {
+class PointOfInterestActivity : AppBaseActivity() {
+
+    private lateinit var cityRegionInsideDetails: MutableList<CityRegionInsideDetails>
+    private lateinit var cityListItemAdapter: CityListItemAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_point_of_interest)
 
-        init()
+        initializeAllView()
     }
 
-    private fun init() {
+    override fun initializeAllView() {
         tv_title.text = "Point Of Interest"
-        iv_back.setOnClickListener(this)
+        setListsAndAdapters()
+    }
 
+    override fun setListsAndAdapters() {
+        cityRegionInsideDetails=ArrayList()
+        cityListItemAdapter = CityListItemAdapter(cityRegionInsideDetails)
+        recyclerViewPointOfInterestList.adapter = cityListItemAdapter
+        clickListeners()
+
+        callBackForRetry = object : CallBackForRetry {
+            override fun onRetry() {
+                if (isOnline(callBackForRetry))
+                    processToLoadPointOfInterestData()
+            }
+        }
+        if (isOnline(callBackForRetry))
+            processToLoadPointOfInterestData()
+    }
+
+    private fun processToLoadPointOfInterestData() {
+        showProgressDialog()
+        val param = getLoginParam()
+        FetchItem(object : FetchItem.ListCommunicatorInterface<CityDetails> {
+            override fun onError(error: VolleyError) {
+                showErrorMessage(error)
+            }
+
+            override fun onSuccess(fetchedDetails: CityDetails) {
+                dismissProgressDialog()
+                URLHelper.ISLAND_IMAGE_URL = fetchedDetails.meta?.image_base_url.toString()
+                textViewPointOfInterestMainDesc.text = Utils.fromHtml(fetchedDetails.introduction)
+                enableSlider(fetchedDetails.slider_base_url, fetchedDetails.sliders)
+                cityRegionInsideDetails.addAll(fetchedDetails.region_list.get(0).list)
+                setRegionData(fetchedDetails.region_list);
+            }
+
+            override fun onFailed(message: String) {
+                dismissProgressDialog()
+                showMessage(message)
+            }
+        }).fetchItem(
+            URLHelper.FETCH_POINT_OF_INTEREST,
+            CityDetails::class.java,
+            param,
+            localClassName
+        )
+    }
+
+    override fun clickListeners() {
+        cityListItemAdapter.setListener(object :CityListItemAdapter.CityItemListener{
+            override fun onClick(cityRegionInsideDetails: CityRegionInsideDetails) {
+                val intent =
+                    Intent(this@PointOfInterestActivity, CitiesTownDetailActivity::class.java)
+                intent.putExtra(
+                    AppConstants.INTENT_CITY_TOWN_DETAILS,
+                    cityRegionInsideDetails
+                )
+                startActivity(intent)
+            }
+        })
+    }
+
+    private fun setRegionData(regionList: List<CityRegionDetails>) {
         tl_direction!!.removeAllTabs()
-
-        tl_direction!!.addTab(tl_direction!!.newTab().setText("NORTH\nKohala n Hamakua"))
-        tl_direction!!.addTab(tl_direction!!.newTab().setText("SOUTH\nMilolii to Pahala"))
-        tl_direction!!.addTab(tl_direction!!.newTab().setText("EAST\nHilo n Puna"))
-        tl_direction!!.addTab(tl_direction!!.newTab().setText("WEST\nKailua-Kona"))
+        for (i in regionList) {
+            tl_direction!!.addTab(tl_direction!!.newTab().setText(i.title + "\n" + i.subtitle))
+        }
+        cityListItemAdapter.notifyDataSetChanged()
 
         val root: View = tl_direction.getChildAt(0)
         if (root is LinearLayout) {
@@ -40,20 +117,21 @@ class PointOfInterestActivity : AppCompatActivity(), View.OnClickListener {
             root.dividerPadding = 10
             root.dividerDrawable = drawable
         }
+        tl_direction!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                cityRegionInsideDetails.clear()
+                cityRegionInsideDetails.addAll(regionList.get(tab.position).list)
+                cityListItemAdapter.notifyDataSetChanged()
+            }
 
-        cv_pointOfInterest1.setOnClickListener(this)
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+
+            }
+        })
     }
 
-    override fun onClick(view: View?) {
-        when (view?.id) {
-            R.id.iv_back -> {
-                finish()
-            }
-            R.id.cv_pointOfInterest1 -> {
-                val intent = Intent(this, AdventureDetailActivity::class.java)
-                intent.putExtra("come_from", "poi")
-                startActivity(intent)
-            }
-        }
-    }
 }

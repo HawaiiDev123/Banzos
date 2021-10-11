@@ -20,6 +20,9 @@
     <string name="retry">Retry</string>
     <string name="error_message">Please try again later</string>
     <string name="title_introduction">Introduction</string>
+    <string name="title_city_details">City Details</string>
+    <string name="title_citytown">Cities &amp; Towns</string>
     <string name="title_general_information">General Information</string>
+    <string name="title_upcoming_events">Upcoming Events</string>
     <string name="lorem_title">Introduction</string>
 </resources>

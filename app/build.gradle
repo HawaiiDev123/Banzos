@@ -7,18 +7,18 @@ apply plugin: 'com.google.firebase.crashlytics'
 android {
     compileSdkVersion 29
     signingConfigs {
-        debug {
+        /*debug {
             storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
             storePassword 'Banzos@Hawaii#2021*'
             keyPassword 'Banzos@Hawaii#2021*'
             keyAlias = 'banzos_hawaii'
         }
-        release {
+        release {/
             storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
             storePassword 'Banzos@Hawaii#2021*'
             keyPassword 'Banzos@Hawaii#2021*'
             keyAlias = 'banzos_hawaii'
-        }
+        }*/
     }
     defaultConfig {
         applicationId "com.mns.banzosapp"
@@ -26,7 +26,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        signingConfig signingConfigs.release
+      //  signingConfig signingConfigs.release
     }
     useLibrary 'org.apache.http.legacy'
 
