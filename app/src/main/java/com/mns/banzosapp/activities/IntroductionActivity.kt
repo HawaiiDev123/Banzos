@@ -2,10 +2,12 @@ package com.mns.banzosapp.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.VolleyError
 import com.mns.banzosapp.R
 import com.mns.banzosapp.adapters.IntroductionMainItemsAdapter
+import com.mns.banzosapp.adapters.base.EndlessScrollNestedScrollViewListener
 import com.mns.banzosapp.app_utils.AppConstants
 import com.mns.banzosapp.app_utils.URLHelper
 import com.mns.banzosapp.common_util.Utils
@@ -23,6 +25,7 @@ import kotlinx.android.synthetic.main.toolbar_layout.*
 class IntroductionActivity : AppBaseActivity() {
 
     private lateinit var recyclerViewIntroductionMainItems: RecyclerView
+    private lateinit var nestedScrollViewIntroduction: NestedScrollView
     private lateinit var introductionSubItemsDetailsList: MutableList<IntroductionSubItemsDetails>
     private lateinit var introductionMainItemsAdapter: IntroductionMainItemsAdapter
     private var fromName: String? = null
@@ -30,7 +33,7 @@ class IntroductionActivity : AppBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
-         fromName = intent.getStringExtra(AppConstants.INTENT_FROM_NAME)
+        fromName = intent.getStringExtra(AppConstants.INTENT_FROM_NAME)
         if (fromName == null) {
             finish()
         }
@@ -44,6 +47,7 @@ class IntroductionActivity : AppBaseActivity() {
 
     override fun initializeAllView() {
         recyclerViewIntroductionMainItems = findViewById(R.id.recyclerViewIntroductionMainItems)
+        nestedScrollViewIntroduction = findViewById(R.id.nestedScrollViewIntroduction)
         introductionSubItemsDetailsList = ArrayList()
         introductionMainItemsAdapter = IntroductionMainItemsAdapter(introductionSubItemsDetailsList)
         setListsAndAdapters()
@@ -58,30 +62,45 @@ class IntroductionActivity : AppBaseActivity() {
                     processToLoadIntroductionList()
             }
         }
+        introductionMainItemsAdapter.setEndlessNestedScrollViewListener(
+            nestedScrollViewIntroduction,
+            object :
+                EndlessScrollNestedScrollViewListener(recyclerViewIntroductionMainItems.layoutManager!!) {
+                override fun onLoadMore() {
+                    if (isOnline())
+                        processToLoadIntroductionList()
+                }
+            })
         if (isOnline(callBackForRetry))
             processToLoadIntroductionList()
     }
 
     private fun processToLoadIntroductionList() {
-        showProgressDialog()
+        introductionMainItemsAdapter.addLoadingIcon()
         val param = getLoginParam()
-          FetchItem(object : FetchItem.ListCommunicatorInterface<IntroductionDetails> {
+        param["page"] = introductionMainItemsAdapter.getPageNumber()
+        FetchItem(object : FetchItem.ListCommunicatorInterface<IntroductionDetails> {
             override fun onError(error: VolleyError) {
                 showErrorMessage(error)
             }
 
             override fun onSuccess(fetchedDetails: IntroductionDetails) {
-                dismissProgressDialog()
+                introductionMainItemsAdapter.removeLoadingIcon()
+                if (introductionMainItemsAdapter.getPageNumber() == "1")
+                    introductionSubItemsDetailsList.clear()
+                if (fetchedDetails.list.isEmpty()) {
+                    introductionMainItemsAdapter.setLoadingCompleted(true)
+                }
+                introductionMainItemsAdapter.setMetaDetails(fetchedDetails.meta)
                 URLHelper.ISLAND_IMAGE_URL = fetchedDetails.meta?.image_base_url.toString()
                 introductionSubItemsDetailsList.addAll(fetchedDetails.list)
                 introductionMainItemsAdapter.notifyDataSetChanged()
-
                 textViewIntroductionDescription.text = Utils.fromHtml(fetchedDetails.introduction)
                 enableSlider(fetchedDetails.slider_base_url, fetchedDetails.sliders)
             }
 
             override fun onFailed(message: String) {
-                dismissProgressDialog()
+                introductionMainItemsAdapter.removeLoadingIcon()
                 showMessage(message)
             }
         }).fetchItem(

@@ -46,7 +46,7 @@ class ApplicationPrefs(private val context: Context) {
     }
 
     fun getIslandId(): String? {
-        return getPreferenceData(ISLAND_ID, "")
+        return getPreferenceData(ISLAND_ID, "").toString()
     }
 
     fun isLogin(): Boolean {

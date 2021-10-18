@@ -10,6 +10,7 @@
     <include layout="@layout/toolbar_layout" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollViewIntroduction"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-20dp"
@@ -44,6 +45,7 @@
                 android:id="@+id/recyclerViewIntroductionMainItems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </LinearLayout>
