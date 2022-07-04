@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".activities.pointOfInterest.PointOfInterestDetailsActivity">
 
@@ -60,12 +60,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDRegionTitle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="West"
+                            android:text=""
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -94,12 +95,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDAddress"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="13342 Ali'i Dr."
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -127,12 +129,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDCityStateZip"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="Kailua-Kona, HI. 96740"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -159,12 +162,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDNearBy"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="31"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -191,12 +195,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDLocationMap"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="Statue, Monument or Tower"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -223,12 +228,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDWebsite"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="www.kingkamehamonument.com"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -255,12 +261,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDPhoneNo"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="808.443.2234"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -287,12 +294,13 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDPricing"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="$50 per night"
+                            android:text=""
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -325,173 +333,15 @@
                             android:layout_weight="0.6"
                             android:orientation="vertical">
 
-                            <LinearLayout
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvPOIDTimeList"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                android:orientation="vertical"
+                                android:background="@color/white" />
 
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Monday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Tuesday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Wednesday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Thursday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Friday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Saturday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Sunday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Closed"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
 
                         </LinearLayout>
 

@@ -7,15 +7,15 @@ import com.mns.banzosapp.model.base.CommonSliderDetails
 class CityRegionInsideDetails : CommonResponse() {
 
     @SerializedName("RecordID")
-    var RecordID: Int? = null
+   public var RecordID: Int? = null
 
     @SerializedName("main_title")
-    var main_title: String? = null
+    public var main_title: String? = null
 
     @SerializedName("description")
-    var description: String? = null
+    public var description: String? = null
 
     @SerializedName("image")
-    var image: MutableList<CommonSliderDetails> = ArrayList()
+    public var image: MutableList<CommonSliderDetails> = ArrayList()
 
 }

@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/_40sdp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/loading_banzos" />
 </LinearLayout>

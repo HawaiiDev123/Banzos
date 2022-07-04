@@ -21,17 +21,23 @@ class SplashActivity : AppBaseActivity() {
 
     override fun initializeAllView() {
         Handler().postDelayed({
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(prefs.isLogin()==0)
+            {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, 3000)
     }
 
     override fun setListsAndAdapters() {
-        TODO("Not yet implemented")
     }
 
     override fun clickListeners() {
-        TODO("Not yet implemented")
     }
 }

@@ -71,8 +71,8 @@ class PointOfInterestActivity : AppBaseActivity() {
                 URLHelper.ISLAND_IMAGE_URL = fetchedDetails.meta?.image_base_url.toString()
                 textViewPointOfInterestMainDesc.text = Utils.fromHtml(fetchedDetails.introduction)
                 enableSlider(fetchedDetails.slider_base_url, fetchedDetails.sliders)
-                cityRegionInsideDetails.addAll(fetchedDetails.region_list.get(0).list)
-                setRegionData(fetchedDetails.region_list);
+                cityRegionInsideDetails.addAll(fetchedDetails.region_title.get(0).list)
+                setRegionData(fetchedDetails.region_title);
             }
 
             override fun onFailed(message: String) {
@@ -91,7 +91,7 @@ class PointOfInterestActivity : AppBaseActivity() {
         cityListItemAdapter.setListener(object :CityListItemAdapter.CityItemListener{
             override fun onClick(cityRegionInsideDetails: CityRegionInsideDetails) {
                 val intent =
-                    Intent(this@PointOfInterestActivity, CitiesTownDetailActivity::class.java)
+                    Intent(this@PointOfInterestActivity, PointOfInterestDetailsActivity::class.java)
                 intent.putExtra(
                     AppConstants.INTENT_CITY_TOWN_DETAILS,
                     cityRegionInsideDetails

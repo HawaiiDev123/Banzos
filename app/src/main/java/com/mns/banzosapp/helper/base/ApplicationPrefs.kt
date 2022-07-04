@@ -10,6 +10,9 @@ class ApplicationPrefs(private val context: Context) {
     private val PREF_NAME = "banzos_prefs"
 
     private val USER_ID = "user_id"
+    private val IS_LOGIN = "is_login"
+    private val EMAIL = "email"
+    private val NAME = "name"
     private val USER_DETAILS = "user_details"
     private val FCM_TOKEN = "fcm_token"
     private val USER_TOKEN = "user_token"
@@ -41,6 +44,22 @@ class ApplicationPrefs(private val context: Context) {
         return getPreferenceData(FCM_TOKEN, "")
     }
 
+    fun setEmail(email: String?) {
+        setPreferencesData(EMAIL, email)
+    }
+
+    fun getEmail(): String? {
+        return getPreferenceData(EMAIL, "")
+    }
+
+    fun setName(name: String?) {
+        setPreferencesData(NAME, name)
+    }
+
+    fun getName(): String? {
+        return getPreferenceData(NAME, "")
+    }
+
     fun setIslandId(islandId: String) {
         setPreferencesData(ISLAND_ID, islandId)
     }
@@ -49,10 +68,18 @@ class ApplicationPrefs(private val context: Context) {
         return getPreferenceData(ISLAND_ID, "").toString()
     }
 
-    fun isLogin(): Boolean {
-        return getUserId() != null && getUserId()!!.trim { it <= ' ' }.isNotEmpty()
+    fun setIsLogin(isLogin: Int) {
+        setPreferencesData(IS_LOGIN, isLogin)
     }
 
+    fun isLogin(): Int? {
+        return getPreferenceData(IS_LOGIN, 0)
+    }
+
+    /* fun isLogin(): Boolean {
+         return getUserId() != null && getUserId()!!.trim { it <= ' ' }.isNotEmpty()
+     }
+ */
     fun clearUser() {
         setUserId(null)
 //        setUserDetails(null)

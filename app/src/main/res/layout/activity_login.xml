@@ -65,7 +65,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:background="@drawable/rectangle_bg_white"
-                        android:inputType="number"
+                        android:inputType="textEmailAddress"
                         android:padding="10dp" />
 
                 </LinearLayout>

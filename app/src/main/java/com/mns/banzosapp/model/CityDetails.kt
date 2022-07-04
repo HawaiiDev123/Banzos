@@ -15,8 +15,8 @@ class CityDetails : CommonResponse() {
     @SerializedName("sliders")
     var sliders: List<CommonSliderDetails> = ArrayList()
 
-    @SerializedName("region_list")
-    var region_list: List<CityRegionDetails> = ArrayList()
+    @SerializedName("region_title")
+    var region_title: List<CityRegionDetails> = ArrayList()
 
 
 }

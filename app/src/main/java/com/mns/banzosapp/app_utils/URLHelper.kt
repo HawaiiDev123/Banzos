@@ -21,17 +21,21 @@ object URLHelper {
 
 
     //List APIs
+    val LOGIN = HostMainAddress + "login"
+
     val FETCH_ISLAND_LIST = HostMainAddress + "list_island"
 
-    val FETCH_INTRODUCTION = HostMainAddress + "introduction_details"
+    val FETCH_INTRODUCTION = HostMainAddress + "introduction_list"
 
-    val FETCH_GENERAL_INFO = HostMainAddress + "general_information_details"
+    val FETCH_GENERAL_INFO = HostMainAddress + "general_information_list"
 
     val FETCH_UPCOMING_EVENT = HostMainAddress + "upcoming_events_list"
 
-    val FETCH_CITY_TOWN = HostMainAddress + "cities_towns_details"
+    val FETCH_CITY_TOWN = HostMainAddress + "cities_towns_list"
 
-    val FETCH_POINT_OF_INTEREST = HostMainAddress + "point_of_interest_details"
+    val FETCH_POINT_OF_INTEREST = HostMainAddress + "point_of_interest_lists"
+
+    val FETCH_POINT_OF_INTEREST_DETAILS = HostMainAddress + "point_of_interest_details"
 
 
     //Add APIs

@@ -72,8 +72,8 @@ class CitiesTownActivity : AppBaseActivity() {
                 URLHelper.ISLAND_IMAGE_URL = fetchedDetails.meta?.image_base_url.toString()
                 textViewCityIntroduction.text = Utils.fromHtml(fetchedDetails.introduction)
                 enableSlider(fetchedDetails.slider_base_url, fetchedDetails.sliders)
-                cityRegionInsideDetails.addAll(fetchedDetails.region_list.get(0).list)
-                setRegionData(fetchedDetails.region_list);
+                cityRegionInsideDetails.addAll(fetchedDetails.region_title.get(0).list)
+                setRegionData(fetchedDetails.region_title);
             }
 
             override fun onFailed(message: String) {
