@@ -20,90 +20,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/ll_imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical">
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/vp_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tl_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp"
-                        app:tabSelectedTextColor="@android:color/transparent"
-                        app:tabTextColor="@android:color/transparent" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sample5" />
-
-                <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:background="@drawable/rectangle_bg_primarydark_outline"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_feedback_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_location_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_distance_white" />
-
-                </LinearLayout>
-
-            </FrameLayout>
+            <include layout="@layout/common_slider_layout" />
 
             <TextView
                 style="@style/primaryDarkColor16spBoldTextStyle"
@@ -114,6 +31,7 @@
                 android:text="Other Things To Do" />
 
             <TextView
+                android:id="@+id/textViewIntroductionDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,8 +54,8 @@
                     android:layout_height="60dp"
                     android:layout_gravity="top"
                     app:tabGravity="fill"
-                    app:tabMode="scrollable"
                     app:tabIndicatorGravity="top"
+                    app:tabMode="scrollable"
                     app:tabSelectedTextColor="@color/white"
                     app:tabTextAppearance="@style/white12spNormalTabTextStyle"
                     app:tabTextColor="@color/sky_blue" />
@@ -148,11 +66,25 @@
                     android:layout_marginTop="-25dp"
                     android:src="@drawable/ic_tab_bg_trial" />
 
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_otherThings_2"
+                    style="@style/MyTabLayoutStyleRegion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top"
+                    app:tabGravity="fill"
+                    app:tabIndicator="@null"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabTextAppearance="@style/primary12spNormalTabTextStyle"
+                    app:tabTextColor="@color/colorPrimary" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -177,7 +109,6 @@
                             android:text="Kohala-Hamakua"
                             android:textColor="@color/colorPrimary"
                             android:textSize="10sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -204,7 +135,6 @@
                             android:text="Milolii n Pahala"
                             android:textColor="@color/colorPrimary"
                             android:textSize="10sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -231,7 +161,6 @@
                             android:text="Hilo-Puna"
                             android:textColor="@color/colorPrimary"
                             android:textSize="10sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -258,9 +187,7 @@
                             android:text="Kailua-Kona"
                             android:textColor="@color/colorPrimary"
                             android:textSize="10sp" />
-
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <View
@@ -269,278 +196,14 @@
                     android:layout_marginBottom="10dp"
                     android:background="@color/white" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_otherThings"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="0dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/light_blue"
-                    app:cardCornerRadius="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/black14spNormalTextStyle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="0.9"
-                                android:gravity="start"
-                                android:padding="10dp"
-                                android:text="Lorem impsum" />
-
-                            <FrameLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="0.1"
-                                android:visibility="visible">
-
-                                <ImageView
-                                    android:layout_width="12dp"
-                                    android:layout_height="12dp"
-                                    android:layout_gravity="end"
-                                    android:layout_marginEnd="10dp"
-                                    android:src="@drawable/ic_arrow_right_black"
-                                    android:visibility="visible" />
-
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_citiesTown2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="0dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/light_blue"
-                    app:cardCornerRadius="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/black14spNormalTextStyle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="0.9"
-                                android:gravity="start"
-                                android:padding="10dp"
-                                android:text="Lorem impsum" />
-
-                            <FrameLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="0.1"
-                                android:visibility="visible">
-
-                                <ImageView
-                                    android:layout_width="12dp"
-                                    android:layout_height="12dp"
-                                    android:layout_gravity="end"
-                                    android:layout_marginEnd="10dp"
-                                    android:src="@drawable/ic_arrow_right_black"
-                                    android:visibility="visible" />
-
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_citiesTown3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="0dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/light_blue"
-                    app:cardCornerRadius="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/black14spNormalTextStyle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="0.9"
-                                android:gravity="start"
-                                android:padding="10dp"
-                                android:text="Lorem impsum" />
-
-                            <FrameLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="0.1"
-                                android:visibility="visible">
-
-                                <ImageView
-                                    android:layout_width="12dp"
-                                    android:layout_height="12dp"
-                                    android:layout_gravity="end"
-                                    android:layout_marginEnd="10dp"
-                                    android:src="@drawable/ic_arrow_right_black"
-                                    android:visibility="visible" />
-
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="0dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/light_blue"
-                    app:cardCornerRadius="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/black14spNormalTextStyle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="0.9"
-                                android:gravity="start"
-                                android:padding="10dp"
-                                android:text="Lorem impsum" />
-
-                            <FrameLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="0.1"
-                                android:visibility="visible">
-
-                                <ImageView
-                                    android:layout_width="12dp"
-                                    android:layout_height="12dp"
-                                    android:layout_gravity="end"
-                                    android:layout_marginEnd="10dp"
-                                    android:src="@drawable/ic_arrow_right_black"
-                                    android:visibility="visible" />
-
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:elevation="0dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/light_blue"
-                    app:cardCornerRadius="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/black14spNormalTextStyle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="0.9"
-                                android:gravity="start"
-                                android:padding="10dp"
-                                android:text="Lorem impsum" />
-
-                            <FrameLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="0.1"
-                                android:visibility="visible">
-
-                                <ImageView
-                                    android:layout_width="12dp"
-                                    android:layout_height="12dp"
-                                    android:layout_gravity="end"
-                                    android:layout_marginEnd="10dp"
-                                    android:src="@drawable/ic_arrow_right_black"
-                                    android:visibility="visible" />
-
-                            </FrameLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/row_other_things_to_do" />
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </LinearLayout>
