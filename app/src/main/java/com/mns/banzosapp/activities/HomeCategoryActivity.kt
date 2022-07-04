@@ -1,32 +1,16 @@
 package com.mns.banzosapp.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mns.banzosapp.R
-import com.mns.banzosapp.activities.activitiesAndTours.ActivitiesTourSelectionActivity
-import com.mns.banzosapp.activities.adventure.AdventureActivity
-import com.mns.banzosapp.activities.beach.BeachListActivity
-import com.mns.banzosapp.activities.citiesTown.CitiesTownActivity
-import com.mns.banzosapp.activities.combo.ComboMainActivity
-import com.mns.banzosapp.activities.diningFood.DiningAndFoodActivity
-import com.mns.banzosapp.activities.healthSafety.HealthSafetyActivity
-import com.mns.banzosapp.activities.lodging.LodgingMainActivity
-import com.mns.banzosapp.activities.otherThingsToDo.OtherThingsToDoActivity
-import com.mns.banzosapp.activities.pointOfInterest.PointOfInterestActivity
-import com.mns.banzosapp.activities.servicesAndRental.valueServices.ValueServicesActivity
-import com.mns.banzosapp.activities.wildlife.WildlifeActivity
 import com.mns.banzosapp.adapters.HomeCategoryListAdapter
-import com.mns.banzosapp.app_utils.AppConstants
 import kotlinx.android.synthetic.main.activity_home_category_trial.*
 
 class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
-
     var homeCategoryList: ArrayList<HomeCategoryModel>? = null
     private var homeCategoryModel: HomeCategoryModel? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_category_trial)
@@ -35,108 +19,86 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun init() {
-
         homeCategoryList = ArrayList()
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Introduction"
         homeCategoryModel?.categoryImage = R.drawable.ic_introduction
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "General Information"
         homeCategoryModel?.categoryImage = R.drawable.ic_gen_information
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Cities & Towns"
         homeCategoryModel?.categoryImage = R.drawable.ic_cities_towns
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Beaches"
         homeCategoryModel?.categoryImage = R.drawable.ic_beaches
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Adventures"
         homeCategoryModel?.categoryImage = R.drawable.ic_adventures
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Activities & Tours"
         homeCategoryModel?.categoryImage = R.drawable.ic_activities_tours
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Combo Trips"
         homeCategoryModel?.categoryImage = R.drawable.ic_combo_trips
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Discount & Deals"
         homeCategoryModel?.categoryImage = R.drawable.ic_discount_deals
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Resorts, Hotels, BBQ & Vacation Homes"
         homeCategoryModel?.categoryImage = R.drawable.ic_resorts_hotels
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Dining & Food"
         homeCategoryModel?.categoryImage = R.drawable.ic_dining_foods
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Services & Rental"
         homeCategoryModel?.categoryImage = R.drawable.ic_services_rental
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Points Of Interest"
         homeCategoryModel?.categoryImage = R.drawable.ic_point_of_interest
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Other Things To Do"
         homeCategoryModel?.categoryImage = R.drawable.ic_other_things_to_do
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Upcoming Events"
         homeCategoryModel?.categoryImage = R.drawable.ic_upcoming_events
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Wildlife"
         homeCategoryModel?.categoryImage = R.drawable.ic_wildlife
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Health & Safety"
         homeCategoryModel?.categoryImage = R.drawable.ic_health_safety
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Customized Travel"
         homeCategoryModel?.categoryImage = R.drawable.ic_customized_travel
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Merchandise"
         homeCategoryModel?.categoryImage = R.drawable.ic_merchandise
         homeCategoryList?.add(homeCategoryModel!!)
-
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "My Hawaii"
         homeCategoryModel?.categoryImage = R.drawable.ic_my_hawaii
         homeCategoryList?.add(homeCategoryModel!!)
-
         /*val layoutManager = GridLayoutManager(this, 2,
             GridLayoutManager.VERTICAL, false)
         rv_homeCategory.layoutManager = layoutManager*/
-
         rv_homeCategory.setHasFixedSize(true)
         val layoutManager = GridLayoutManager(this, 2)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -150,9 +112,7 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         rv_homeCategory.layoutManager = layoutManager
-
-        rv_homeCategory.adapter = HomeCategoryListAdapter(this, homeCategoryList!!, layoutManager)
-
+        rv_homeCategory.adapter = HomeCategoryListAdapter(this, homeCategoryList!!)
         /* ll_information.setOnClickListener(this)
          ll_generalInfo.setOnClickListener(this)
          ll_citiesTowns.setOnClickListener(this)
@@ -177,7 +137,7 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.ll_information -> {
+            /*R.id.ll_information -> {
                 val intent = Intent(this, IntroductionActivity::class.java)
                 intent.putExtra(AppConstants.INTENT_FROM_NAME, AppConstants.SCREEN_INTRODUCTION)
                 startActivity(intent)
@@ -261,7 +221,7 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ll_vacationPackage -> {
                 val intent = Intent(this, VacationPackageActivity::class.java)
                 startActivity(intent)
-            }
+            }*/
         }
     }
 

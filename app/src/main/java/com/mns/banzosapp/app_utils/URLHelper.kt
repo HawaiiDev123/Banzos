@@ -33,6 +33,8 @@ object URLHelper {
 
     val FETCH_POINT_OF_INTEREST = HostMainAddress + "point_of_interest_details"
 
+    val FETCH_OTHER_THINGS_TO_DO = HostMainAddress + "other_things_to_do_list"
+
 
     //Add APIs
 

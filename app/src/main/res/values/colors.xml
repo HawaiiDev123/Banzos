@@ -11,6 +11,7 @@
     <color name="lightest_blue">#f0f9fe</color>
 
     <color name="white">#fff</color>
+    <color name="transparent">#00000000</color>
     <color name="black">#000</color>
 
     <color name="orange">@android:color/holo_orange_dark</color>

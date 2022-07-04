@@ -12,6 +12,9 @@ class CityRegionDetails : CommonResponse() {
     @SerializedName("title")
     var title: String? = null
 
+    @SerializedName("region_title")
+    var region_title: String? = null
+
     @SerializedName("subtitle")
     var subtitle: String? = null
 
