@@ -39,7 +39,6 @@
                 android:text="@string/create_new_account"
                 android:textColor="@color/white" />
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,10 +66,8 @@
                         android:background="@drawable/rectangle_bg_white"
                         android:inputType="textEmailAddress"
                         android:padding="10dp" />
-
                 </LinearLayout>
             </LinearLayout>
-
             <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,38 +97,35 @@
                         android:padding="10dp" />
 
                 </LinearLayout>
-            </LinearLayout>-->
+            </LinearLayout>--><LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Password"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center">
-
-                    <EditText
-                        android:id="@+id/et_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:background="@drawable/rectangle_bg_white"
-                        android:inputType="textPassword"
-                        android:padding="10dp" />
-
-                </LinearLayout>
+                    android:background="@drawable/rectangle_bg_white"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
             </LinearLayout>
+        </LinearLayout>
 
             <Button
                 android:id="@+id/btn_login"
@@ -141,9 +135,6 @@
                 android:background="@drawable/rectangle_bg_primarydark"
                 android:text="Sign In"
                 android:textColor="@color/white" />
-
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.core.widget.NestedScrollView>

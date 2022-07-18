@@ -30,11 +30,11 @@ class OtherThingsToDoActivity : AppBaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other_things_to_do)
+        updateToolbar(getString(R.string.title_other_things_to_do))
         initializeAllView()
     }
 
     override fun initializeAllView() {
-        tv_title.text = "Other Things To Do"
         otherThingsListAll = ArrayList()
         otherThingsListForAdapter = ArrayList()
         adapterOtherThingsToDo = AdapterOtherThingsToDo(otherThingsListForAdapter)
@@ -102,7 +102,6 @@ class OtherThingsToDoActivity : AppBaseActivity(), View.OnClickListener {
     }
 
     override fun clickListeners() {
-        iv_back.setOnClickListener(this)
         adapterOtherThingsToDo.setListener(object :
             AdapterOtherThingsToDo.OtherThingsClickListener {
             override fun onView(otherThingsToDoDetails: CityRegionInsideDetails) {
@@ -154,30 +153,23 @@ class OtherThingsToDoActivity : AppBaseActivity(), View.OnClickListener {
             }
         })
     }
-
-   /* private fun init() {
-        tl_otherThings!!.removeAllTabs()
-        tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Bars n Nightlife"))
-        tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Entertainment"))
-        tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Free things to do"))
-        tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Shopping"))
-        tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Tournaments"))
-        val root: View = tl_otherThings.getChildAt(0)
-        if (root is LinearLayout) {
-            root.showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
-            val drawable = GradientDrawable()
-            drawable.setColor(resources.getColor(R.color.white))
-            drawable.setSize(2, 1)
-            root.dividerPadding = 10
-            root.dividerDrawable = drawable
-        }
-    }*/
-
+    /* private fun init() {
+         tl_otherThings!!.removeAllTabs()
+         tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Bars n Nightlife"))
+         tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Entertainment"))
+         tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Free things to do"))
+         tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Shopping"))
+         tl_otherThings!!.addTab(tl_otherThings!!.newTab().setText("Tournaments"))
+         val root: View = tl_otherThings.getChildAt(0)
+         if (root is LinearLayout) {
+             root.showDividers = LinearLayout.SHOW_DIVIDER_MIDDLE
+             val drawable = GradientDrawable()
+             drawable.setColor(resources.getColor(R.color.white))
+             drawable.setSize(2, 1)
+             root.dividerPadding = 10
+             root.dividerDrawable = drawable
+         }
+     }*/
     override fun onClick(view: View?) {
-        when (view?.id) {
-            R.id.iv_back -> {
-                finish()
-            }
-        }
     }
 }

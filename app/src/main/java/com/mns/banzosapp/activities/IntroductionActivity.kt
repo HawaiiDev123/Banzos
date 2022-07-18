@@ -17,19 +17,14 @@ import com.mns.banzosapp.helper.http.FetchItem
 import com.mns.banzosapp.model.IntroductionDetails
 import com.mns.banzosapp.model.IntroductionSubItemsDetails
 import kotlinx.android.synthetic.main.activity_introduction.*
-import kotlinx.android.synthetic.main.activity_introduction_details.*
-import kotlinx.android.synthetic.main.row_home_island_list_item.*
-import kotlinx.android.synthetic.main.toolbar_layout.*
 
 //The same activity is used for General Information screen as well.
 class IntroductionActivity : AppBaseActivity() {
-
     private lateinit var recyclerViewIntroductionMainItems: RecyclerView
     private lateinit var nestedScrollViewIntroduction: NestedScrollView
     private lateinit var introductionSubItemsDetailsList: MutableList<IntroductionSubItemsDetails>
     private lateinit var introductionMainItemsAdapter: IntroductionMainItemsAdapter
     private var fromName: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_introduction)
@@ -73,6 +68,11 @@ class IntroductionActivity : AppBaseActivity() {
             })
         if (isOnline(callBackForRetry))
             processToLoadIntroductionList()
+        enableCommonSearch(object : SearchListener {
+            override fun onSearch(text: String) {
+                introductionMainItemsAdapter.filter.filter(text)
+            }
+        })
     }
 
     private fun processToLoadIntroductionList() {
