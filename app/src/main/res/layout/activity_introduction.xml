@@ -41,6 +41,8 @@
                 android:layout_marginEnd="20dp"
                 android:text="@string/dummy_two_para" />
 
+            <include layout="@layout/common_search_layout" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewIntroductionMainItems"
                 android:layout_width="match_parent"

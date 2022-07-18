@@ -8,7 +8,6 @@ import com.mns.banzosapp.R
 import com.mns.banzosapp.helper.base.AppBaseActivity
 
 class SplashActivity : AppBaseActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(
@@ -21,14 +20,12 @@ class SplashActivity : AppBaseActivity() {
 
     override fun initializeAllView() {
         Handler().postDelayed({
-            if(prefs.isLogin()==0)
-            {
-                val intent = Intent(this, LoginActivity::class.java)
+            if (prefs.isLogin()) {
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            else {
-                val intent = Intent(this, HomeActivity::class.java)
+            } else {
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

@@ -39,6 +39,8 @@ object URLHelper {
 
     val FETCH_OTHER_THINGS_TO_DO = HostMainAddress + "other_things_to_do_list"
 
+    val FETCH_HEALTH_SAFETY_LIST = HostMainAddress + "health_and_safety_lists"
+
 
     //Add APIs
 

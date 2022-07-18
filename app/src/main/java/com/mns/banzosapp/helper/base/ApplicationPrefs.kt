@@ -2,13 +2,12 @@ package com.mns.banzosapp.helper.base
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import com.mns.banzosapp.model.UserDetails
 
 class ApplicationPrefs(private val context: Context) {
-
     private lateinit var prefsT: ApplicationPrefs
-
     private val PREF_NAME = "banzos_prefs"
-
     private val USER_ID = "user_id"
     private val IS_LOGIN = "is_login"
     private val EMAIL = "email"
@@ -17,7 +16,6 @@ class ApplicationPrefs(private val context: Context) {
     private val FCM_TOKEN = "fcm_token"
     private val USER_TOKEN = "user_token"
     private val ISLAND_ID = "mild_id"
-
     fun setUserId(userId: String?) {
         setPreferencesData(USER_ID, userId)
     }
@@ -26,7 +24,7 @@ class ApplicationPrefs(private val context: Context) {
         return getPreferenceData(USER_ID, null)
     }
 
-/*    fun setUserDetails(userDetail: UserDetails?) {
+    fun setUserDetails(userDetail: UserDetails?) {
         val gson = Gson()
         setPreferencesData(USER_DETAILS, gson.toJson(userDetail))
     }
@@ -34,7 +32,7 @@ class ApplicationPrefs(private val context: Context) {
     fun getUserDetails(): UserDetails {
         val gson = Gson()
         return gson.fromJson(getPreferenceData(USER_DETAILS, ""), UserDetails::class.java)
-    }*/
+    }
 
     fun setFCMToken(userToken: String?) {
         setPreferencesData(FCM_TOKEN, userToken)
@@ -64,25 +62,17 @@ class ApplicationPrefs(private val context: Context) {
         setPreferencesData(ISLAND_ID, islandId)
     }
 
-    fun getIslandId(): String? {
+    fun getIslandId(): String {
         return getPreferenceData(ISLAND_ID, "").toString()
     }
 
-    fun setIsLogin(isLogin: Int) {
-        setPreferencesData(IS_LOGIN, isLogin)
+    fun isLogin(): Boolean {
+        return getUserId() != null && getUserId()!!.trim { it <= ' ' }.isNotEmpty()
     }
 
-    fun isLogin(): Int? {
-        return getPreferenceData(IS_LOGIN, 0)
-    }
-
-    /* fun isLogin(): Boolean {
-         return getUserId() != null && getUserId()!!.trim { it <= ' ' }.isNotEmpty()
-     }
- */
     fun clearUser() {
         setUserId(null)
-//        setUserDetails(null)
+        setUserDetails(null)
         setUserToken(null)
     }
 
@@ -161,7 +151,6 @@ class ApplicationPrefs(private val context: Context) {
      * fetch  method for pref
      *
      * */
-
     /*
      *
      * fetch  method for pref

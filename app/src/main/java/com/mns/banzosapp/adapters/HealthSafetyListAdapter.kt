@@ -2,7 +2,6 @@ package com.mns.banzosapp.adapters
 
 import android.app.Dialog
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.*
@@ -28,10 +27,6 @@ class HealthSafetyListAdapter(private var context: Context, private var comeFrom
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        holder.itemView.tv_share.setOnClickListener {
-            openAddToTripPlannerDialog()
-        }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

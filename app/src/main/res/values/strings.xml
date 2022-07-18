@@ -25,5 +25,8 @@
     <string name="title_citytown">Cities &amp; Towns</string>
     <string name="title_general_information">General Information</string>
     <string name="title_upcoming_events">Upcoming Events</string>
+    <string name="title_health_safety">Health &amp; Safety</string>
+    <string name="title_other_things_to_do">Other Things To Do</string>
     <string name="lorem_title">Introduction</string>
+    <string name="hint_search_list">Search list</string>
 </resources>

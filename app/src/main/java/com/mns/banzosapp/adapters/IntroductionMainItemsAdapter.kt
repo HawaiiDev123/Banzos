@@ -6,14 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mns.banzosapp.R
-import com.mns.banzosapp.adapters.base.BaseAdapterLoading
+import com.mns.banzosapp.adapters.base.BaseAdapterLoadingAndSearch
 import com.mns.banzosapp.model.IntroductionSubItemsDetails
 
 class IntroductionMainItemsAdapter(introductionSubItemsDetailsList: MutableList<IntroductionSubItemsDetails>) :
-    BaseAdapterLoading<IntroductionSubItemsDetails>(introductionSubItemsDetailsList) {
-
+    BaseAdapterLoadingAndSearch<IntroductionSubItemsDetails>(introductionSubItemsDetailsList) {
     private lateinit var introductionListener: IntroductionListener
-
     fun setListener(introductionListener: IntroductionListener) {
         this.introductionListener = introductionListener
     }
