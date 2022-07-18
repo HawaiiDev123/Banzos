@@ -17,7 +17,7 @@
             android:id="@+id/rl_homeCategory"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/ic_category_main"
             android:orientation="vertical"
             app:layout_constraintDimensionRatio="2:1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
                 android:id="@+id/tv_welcome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:gravity="center"
+                android:paddingTop="30dp"
                 android:text="Welcome to Kauai"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
@@ -41,21 +41,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_welcome"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:text="Choose your category"
                 android:textAllCaps="true"
                 android:textColor="@color/white" />
 
-            <ImageView
-                android:id="@+id/iv_bg"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/_50sdp"
                 android:layout_alignParentBottom="true"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="-30dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_home_category_bg" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_10sdp"
+                android:weightSum="5">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_category_menu_home" />
+
+                   <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_category_menu_recent_view" />
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_category_menu_favorite" />
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_category_menu_trip_planner" />
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_category_menu_more" />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
