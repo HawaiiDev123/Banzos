@@ -57,7 +57,7 @@ class PointOfInterestDetailsActivity : AppBaseActivity() {
 
     private fun processToLoadPointOfInterestDetailsData() {
         showProgressDialog()
-        val param = getParam()
+        val param = getLoginParam()
         param["RecordID"] = cityRegionInsideDetails?.RecordID.toString()
         FetchItem(object : FetchItem.ListCommunicatorInterface<PointOfInterestDetails> {
             override fun onError(error: VolleyError) {
@@ -94,6 +94,7 @@ class PointOfInterestDetailsActivity : AppBaseActivity() {
         tvPOIDWebsite.setText(regionTitle.website)
         tvPOIDPhoneNo.setText(regionTitle.phone_no)
         tvPOIDPricing.setText(regionTitle.pricing)
+        tvPOIDDescription.setText(Utils.fromHtml(regionTitle.description))
 
         val timeDetailList: MutableList<TimeDetails> = regionTitle.time as MutableList<TimeDetails>
         val dayOfOpTimesAdapter = DayOfOpTimesAdapter(timeDetailList)

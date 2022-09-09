@@ -23,6 +23,8 @@ object URLHelper {
     //List APIs
     val LOGIN = HostMainAddress + "login"
 
+    val REGISTRATION = HostMainAddress + "registration"
+
     val FETCH_ISLAND_LIST = HostMainAddress + "list_island"
 
     val FETCH_INTRODUCTION = HostMainAddress + "introduction_list"

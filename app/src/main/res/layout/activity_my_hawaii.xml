@@ -234,6 +234,7 @@
                 android:textColor="@color/white" />
 
             <TextView
+                android:id="@+id/tvMyHawaiiLogout"
                 style="@style/white14spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
