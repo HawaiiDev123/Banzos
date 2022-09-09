@@ -350,16 +350,9 @@
 
             </LinearLayout>
 
-            <TextView
-                style="@style/black16spBoldTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:gravity="start"
-                android:text="Highlights" />
 
             <TextView
+                android:id="@+id/tvPOIDDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -368,24 +361,6 @@
                 android:layout_marginEnd="20dp"
                 android:text="@string/dummy_one_para" />
 
-            <TextView
-                style="@style/black16spBoldTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="start"
-                android:text="General Information" />
-
-            <TextView
-                style="@style/black14spNormalTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/dummy_two_para" />
 
         </LinearLayout>
 
