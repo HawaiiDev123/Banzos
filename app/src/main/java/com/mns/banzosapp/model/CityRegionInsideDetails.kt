@@ -12,6 +12,9 @@ class CityRegionInsideDetails : CommonResponse() {
     @SerializedName("main_title")
     public var main_title: String? = null
 
+    @SerializedName("title")
+    public var title: String? = null
+
     @SerializedName("address")
     public var address: String? = null
 
@@ -23,6 +26,9 @@ class CityRegionInsideDetails : CommonResponse() {
 
     @SerializedName("description")
     public var description: String? = null
+
+    @SerializedName("game_description")
+    public var game_description: String? = null
 
     @SerializedName("image")
     public var image: MutableList<CommonSliderDetails> = ArrayList()

@@ -18,6 +18,9 @@ object AppConstants {
     const val INTENT_FROM_NAME = "fromName"
     const val INTENT_INTRODUCTION_DETAILS = "introductionDetails"
     const val INTENT_CITY_TOWN_DETAILS = "cityTownDetails"
+    const val INTENT_ISLAND_NAME = "islandName"
+    const val INTENT_BEACH_DETAILS = "beachDetails"
+    const val INTENT_WILDLIFE_DETAILS = "wildLifeDetails"
 
 
     //Screen Names

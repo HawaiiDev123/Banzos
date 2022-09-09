@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_introduction"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_introduction" />
+    <item
+        android:id="@+id/menu_general_info"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_general_info" />
+    <item
+        android:id="@+id/menu_city_town"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_city_town" />
+    <item
+        android:id="@+id/menu_best_beaches"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_best_beaches" />
+    <item
+        android:id="@+id/menu_adventures"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_adventures" />
+    <item
+        android:id="@+id/menu_activities_tour"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_activities_tour" />
+    <item
+        android:id="@+id/menu_combo_trips"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_combo_trips" />
+    <item
+        android:id="@+id/menu_discount_deals"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_discount_deals" />
+    <item
+        android:id="@+id/menu_hotels_bbs_homes"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_hotels_bbs_homes" />
+    <item
+        android:id="@+id/menu_dining_food"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_dining_food" />
+    <item
+        android:id="@+id/menu_services_rentals"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_services_rentals" />
+    <item
+        android:id="@+id/menu_point_of_interest"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_point_of_interest" />
+    <item
+        android:id="@+id/menu_other_things_to_do"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_other_things_to_do" />
+    <item
+        android:id="@+id/menu_upcoming_events"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_upcoming_events" />
+    <item
+        android:id="@+id/menu_relaxation"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_relaxation" />
+    <item
+        android:id="@+id/menu_cultural_immersion"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_cultural_immersion" />
+    <item
+        android:id="@+id/menu_wildlife"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_wildlife" />
+    <item
+        android:id="@+id/menu_health_safety"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_health_safety" />
+    <item
+        android:id="@+id/menu_customized_travel"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_customized_travel" />
+    <item
+        android:id="@+id/menu_merchandise"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_merchandise" />
+    <item
+        android:id="@+id/menu_my_hawaii"
+        android:icon="@drawable/ic_dot"
+        android:title="@string/menu_my_hawaii" />
+</menu>

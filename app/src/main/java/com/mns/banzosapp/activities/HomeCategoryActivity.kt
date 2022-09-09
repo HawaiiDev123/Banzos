@@ -1,24 +1,40 @@
 package com.mns.banzosapp.activities
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ContextThemeWrapper
+import androidx.appcompat.view.menu.MenuBuilder
+import androidx.appcompat.view.menu.MenuPopupHelper
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mns.banzosapp.R
 import com.mns.banzosapp.adapters.HomeCategoryListAdapter
+import com.mns.banzosapp.app_utils.AppConstants
+import com.mns.banzosapp.helper.base.AppBaseActivity
 import kotlinx.android.synthetic.main.activity_home_category_trial.*
 
-class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
+class HomeCategoryActivity : AppBaseActivity(), View.OnClickListener {
     var homeCategoryList: ArrayList<HomeCategoryModel>? = null
     private var homeCategoryModel: HomeCategoryModel? = null
+    private var islandName = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_category_trial)
-
-        init()
+        islandName = intent.getStringExtra(AppConstants.INTENT_ISLAND_NAME)!!
+        initializeAllView()
     }
 
-    private fun init() {
+    override fun initializeAllView() {
+        tv_welcome.text = "Welcome to $islandName"
+        setListsAndAdapters()
+    }
+
+    override fun setListsAndAdapters() {
         homeCategoryList = ArrayList()
         homeCategoryModel = HomeCategoryModel()
         homeCategoryModel?.categoryName = "Introduction"
@@ -96,132 +112,72 @@ class HomeCategoryActivity : AppCompatActivity(), View.OnClickListener {
         homeCategoryModel?.categoryName = "My Hawaii"
         homeCategoryModel?.categoryImage = R.drawable.ic_my_hawaii
         homeCategoryList?.add(homeCategoryModel!!)
-        /*val layoutManager = GridLayoutManager(this, 2,
-            GridLayoutManager.VERTICAL, false)
-        rv_homeCategory.layoutManager = layoutManager*/
         rv_homeCategory.setHasFixedSize(true)
         val layoutManager = GridLayoutManager(this, 2)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
-                /*when (position) {
-                    0, 2, 4, 6, 8, 10 -> return 2
-                    1, 3, 5, 7, 9, 11 -> return 1
-                    else -> return 2
-                }*/
-                return if (position % 3 == 0) 2 else 1
+                return when (position) {
+                    0, 1, 3, 4, 5, 6, 9, 10, 11, 12, 14, 15, 16, 17 -> {
+                        1
+                    }
+                    2, 7, 8, 13, 18 -> {
+                        2
+                    }
+                    else -> {
+                        1
+                    }
+                }
+//                return if (position % 3 == 0) 2 else 1
             }
         }
         rv_homeCategory.layoutManager = layoutManager
         rv_homeCategory.adapter = HomeCategoryListAdapter(this, homeCategoryList!!)
-        /* ll_information.setOnClickListener(this)
-         ll_generalInfo.setOnClickListener(this)
-         ll_citiesTowns.setOnClickListener(this)
-         ll_beaches.setOnClickListener(this)
-         ll_adventure.setOnClickListener(this)
-         ll_activities.setOnClickListener(this)
-         ll_combo.setOnClickListener(this)
-         ll_diningFood.setOnClickListener(this)
-         ll_pointOfInterest.setOnClickListener(this)
-         ll_wildlife.setOnClickListener(this)
-         ll_lodging.setOnClickListener(this)
-         ll_otherThings.setOnClickListener(this)
-         ll_myHawaii.setOnClickListener(this)
-         ll_favTrips.setOnClickListener(this)
-         ll_valueServices.setOnClickListener(this)
-         ll_healthSafety.setOnClickListener(this)
-         ll_upcomingEvents.setOnClickListener(this)
-         ll_recentlyViewed.setOnClickListener(this)
-         ll_customisedTravel.setOnClickListener(this)
-         ll_vacationPackage.setOnClickListener(this)*/
+        clickListeners()
+    }
+
+    override fun clickListeners() {
+        imageViewMenu.setOnClickListener(this)
+    }
+
+    @SuppressLint("RestrictedApi")
+    private fun showPopup(v: View) {
+        val wrapper: Context = ContextThemeWrapper(this, R.style.popupMenuStyle)
+        val popup = PopupMenu(wrapper, v)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.home_screen_menu, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_introduction -> {
+                    showMessage("Introduction")
+                }
+            }
+            true
+        }
+        popup.show()
+        val menuHelper = MenuPopupHelper(this, (popup.menu as MenuBuilder), v)
+        menuHelper.setForceShowIcon(true)
+        menuHelper.show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.home_screen_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_introduction -> {
+                showMessage("Introduction")
+            }
+        }
+        return true
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            /*R.id.ll_information -> {
-                val intent = Intent(this, IntroductionActivity::class.java)
-                intent.putExtra(AppConstants.INTENT_FROM_NAME, AppConstants.SCREEN_INTRODUCTION)
-                startActivity(intent)
+            R.id.imageViewMenu -> {
+                showPopup(view)
             }
-            R.id.ll_generalInfo -> {
-                val intent = Intent(this, IntroductionActivity::class.java)
-                intent.putExtra(
-                    AppConstants.INTENT_FROM_NAME,
-                    AppConstants.SCREEN_GENERAL_INFORMATION
-                )
-                startActivity(intent)
-            }
-            R.id.ll_citiesTowns -> {
-                val intent = Intent(this, CitiesTownActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_beaches -> {
-                val intent = Intent(this, BeachListActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_adventure -> {
-                val intent = Intent(this, AdventureActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_activities -> {
-                val intent = Intent(this, ActivitiesTourSelectionActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_combo -> {
-                val intent = Intent(this, ComboMainActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_diningFood -> {
-                val intent = Intent(this, DiningAndFoodActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_pointOfInterest -> {
-                val intent = Intent(this, PointOfInterestActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_wildlife -> {
-                val intent = Intent(this, WildlifeActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_lodging -> {
-                val intent = Intent(this, LodgingMainActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_otherThings -> {
-                val intent = Intent(this, OtherThingsToDoActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_myHawaii -> {
-                val intent = Intent(this, MyHawaiiActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_favTrips -> {
-                val intent = Intent(this, FavoriteTripsActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_valueServices -> {
-                val intent = Intent(this, ValueServicesActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_healthSafety -> {
-                val intent = Intent(this, HealthSafetyActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_upcomingEvents -> {
-                val intent = Intent(this, UpcomingEventsActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_recentlyViewed -> {
-                val intent = Intent(this, RecentlyViewedActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_customisedTravel -> {
-                val intent = Intent(this, CustomizedTravelActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.ll_vacationPackage -> {
-                val intent = Intent(this, VacationPackageActivity::class.java)
-                startActivity(intent)
-            }*/
         }
     }
 

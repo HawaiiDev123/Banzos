@@ -21,136 +21,18 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/ll_imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical">
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/vp_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tl_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp"
-                        app:tabSelectedTextColor="@android:color/transparent"
-                        app:tabTextColor="@android:color/transparent" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sample5" />
-
-                <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:background="@drawable/rectangle_bg_primarydark_outline"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_heart_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_location_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_calendar_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_compass_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_feedback_white" />
-
-                </LinearLayout>
-
-            </FrameLayout>
+            <include layout="@layout/common_slider_layout" />
 
             <TextView
+                android:id="@+id/textViewBeachTitle"
                 style="@style/primaryDarkColor18spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Ahalanui Park" />
+                android:gravity="center" />
 
             <TextView
+                android:id="@+id/textViewBeachDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,46 +64,14 @@
                         android:textColor="@color/colorPrimaryDark" />
 
                     <LinearLayout
+                        android:id="@+id/linearLayoutAminities"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.6"
                         android:background="@color/grey_5"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                    </LinearLayout>
-
+                        android:orientation="horizontal" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -247,46 +97,14 @@
                         android:textColor="@color/colorPrimaryDark" />
 
                     <LinearLayout
+                        android:id="@+id/linearLayoutActivities"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.6"
                         android:background="@color/grey_5"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginStart="10dp"
-                            android:src="@drawable/ic_swimmer_black" />
-
-                    </LinearLayout>
-
+                        android:orientation="horizontal" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -322,7 +140,6 @@
                         android:textColor="@color/orange"
                         android:textSize="12sp"
                         android:textStyle="bold" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -348,6 +165,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewKidFriendly"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -355,7 +173,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -381,6 +198,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewLifeGuard"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -388,7 +206,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -413,6 +230,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewMaximumDepth"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -420,7 +238,6 @@
                         android:padding="10dp"
                         android:text="Ahalanui Park"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -445,6 +262,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewSnorkelingLevel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -452,7 +270,6 @@
                         android:padding="10dp"
                         android:text="beginner"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -477,6 +294,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewBestSnorkelTime"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -484,7 +302,6 @@
                         android:padding="10dp"
                         android:text="06:00:00"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -509,6 +326,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewBeachOpen"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -516,7 +334,6 @@
                         android:padding="10dp"
                         android:text="10:00:00"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -541,6 +358,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewBeachClosed"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -548,7 +366,6 @@
                         android:padding="10dp"
                         android:text="12:00:00"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -573,6 +390,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewPhoneAddress"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.6"
@@ -580,7 +398,6 @@
                         android:padding="10dp"
                         android:text="9876543210"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -591,7 +408,6 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="Review This Beach" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -615,7 +431,6 @@
                     android:background="@color/colorPrimaryDark"
                     android:text="Review This Beach"
                     android:textColor="@color/white" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -641,12 +456,12 @@
                         android:text="Excellent" />
 
                     <TextView
+                        android:id="@+id/textViewExcellent"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="66%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -666,12 +481,12 @@
                         android:text="Very Good" />
 
                     <TextView
+                        android:id="@+id/textViewVeryGood"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="20%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -691,12 +506,12 @@
                         android:text="Average" />
 
                     <TextView
+                        android:id="@+id/textViewAverage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="15%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -716,12 +531,12 @@
                         android:text="Poor" />
 
                     <TextView
+                        android:id="@+id/textViewPoor"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="05%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -741,17 +556,17 @@
                         android:text="Terrible" />
 
                     <TextView
+                        android:id="@+id/textViewTerrible"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="01%" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <com.app.progresviews.ProgressLine
+                android:id="@+id/progressLineWaterClarity"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -767,6 +582,7 @@
                 app:valuePercentage="55" />
 
             <com.app.progresviews.ProgressLine
+                android:id="@+id/progressLineWildLife"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -782,6 +598,7 @@
                 app:valuePercentage="55" />
 
             <com.app.progresviews.ProgressLine
+                android:id="@+id/progressLineReef"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -797,6 +614,7 @@
                 app:valuePercentage="55" />
 
             <com.app.progresviews.ProgressLine
+                android:id="@+id/progressLineEase"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -812,6 +630,7 @@
                 app:valuePercentage="55" />
 
             <com.app.progresviews.ProgressLine
+                android:id="@+id/progressLineSany"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
@@ -825,7 +644,6 @@
                 app:value="Sany Beach For Entertaining: 5.3/10"
                 app:valueDefTextSize="14sp"
                 app:valuePercentage="55" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -860,9 +678,7 @@
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_arrow_right_black"
                         android:visibility="visible" />
-
                 </FrameLayout>
-
             </LinearLayout>
 
             <LinearLayout
@@ -898,12 +714,11 @@
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_arrow_right_black"
                         android:visibility="visible" />
-
                 </FrameLayout>
-
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayoutNearbyPlaces"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -913,6 +728,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textViewNearbyPlaces"
                     style="@style/primaryDarkColor14spNormalTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -936,12 +752,11 @@
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_arrow_right_black"
                         android:visibility="visible" />
-
                 </FrameLayout>
-
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayoutNearbyFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -974,12 +789,11 @@
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_arrow_right_black"
                         android:visibility="visible" />
-
                 </FrameLayout>
-
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayoutOtherThingsToDo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -1013,12 +827,15 @@
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_arrow_right_black"
                         android:visibility="visible" />
-
                 </FrameLayout>
-
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewMapImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/app_name" />
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </LinearLayout>

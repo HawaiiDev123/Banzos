@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.VolleyError
 import com.mns.banzosapp.R
 import com.mns.banzosapp.adapters.AdapterIslandListHome
+import com.mns.banzosapp.app_utils.AppConstants
 import com.mns.banzosapp.app_utils.URLHelper
 import com.mns.banzosapp.helper.base.AppBaseActivity
 import com.mns.banzosapp.helper.base.CallBackForRetry
@@ -14,11 +15,9 @@ import com.mns.banzosapp.model.IslandDetails
 import com.mns.banzosapp.model.IslandResponse
 
 class HomeActivity : AppBaseActivity() {
-
     private lateinit var recyclerViewIslandList: RecyclerView
     private lateinit var islandList: MutableList<IslandDetails>
     private lateinit var adapterIslandListHome: AdapterIslandListHome
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -50,6 +49,7 @@ class HomeActivity : AppBaseActivity() {
             override fun onView(islandDetails: IslandDetails) {
                 prefs.setIslandId(islandDetails.mild_id.toString())
                 val intent = Intent(this@HomeActivity, HomeCategoryActivity::class.java)
+                intent.putExtra(AppConstants.INTENT_ISLAND_NAME, islandDetails.title)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             }
@@ -103,5 +103,4 @@ class HomeActivity : AppBaseActivity() {
         }).fetchList(URLHelper.ISLAND_IMAGE_URL, IslandDetails::class.java, param, localClassName)
         * */
     }
-
 }

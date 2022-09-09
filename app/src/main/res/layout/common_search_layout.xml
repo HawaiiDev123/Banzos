@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
-    android:visibility="gone">
+    android:visibility="visible">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextCommonSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_bg_white"
+        android:background="@drawable/rectangle_bg_grey_outline"
+        android:drawableEnd="@drawable/ic_search_white"
         android:hint="@string/hint_search_list"
+        android:inputType="textCapSentences"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp" />

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_3sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_3sdp"
+    android:background="@color/sky_blue">
+
+    <ImageView
+        android:id="@+id/imageViewOtherThingsToDo"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_sample1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewNearbyPlace"
+        android:orientation="vertical"
+        android:padding="@dimen/_4sdp">
+
+        <TextView
+            android:id="@+id/textViewOtherThingsToDoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ocean_lava_tour"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/textViewOtherThingsToDoPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/lorem_your_price_0_00"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/textViewViewDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/colorPrimaryDark"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:text="@string/view_details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp" />
+    </LinearLayout>
+</RelativeLayout>

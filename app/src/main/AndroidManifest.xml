@@ -81,6 +81,9 @@
         <activity android:name=".activities.TutorialActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.beach.NearbyPlacesActivity" />
+        <activity android:name=".activities.beach.NearbyFoodActivity" />
+        <activity android:name=".activities.beach.OtherThingsToDoBeachActivity" />
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"

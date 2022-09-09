@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.util.Util
 import com.mns.banzosapp.R
 import com.mns.banzosapp.adapters.base.BaseAdapter
 import com.mns.banzosapp.app_utils.AppConstants

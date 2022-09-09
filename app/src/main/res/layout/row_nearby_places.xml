@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_3sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_3sdp"
+    android:background="@color/sky_blue">
+
+    <ImageView
+        android:id="@+id/imageViewNearbyPlace"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_sample1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayoutBottom"
+        android:layout_toEndOf="@id/imageViewNearbyPlace"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/_4sdp">
+
+        <TextView
+            android:id="@+id/textViewNearByPlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_lei_making_class"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/textViewNearByPlaceDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/lorem_other_things_to_do"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_9sdp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewNearbyPlace"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/textViewMiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/lorem_1_4_miles"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/textViewMiles"
+            android:gravity="end">
+
+            <com.willy.ratingbar.ScaleRatingBar
+                android:id="@+id/ratingBarRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:srb_clearRatingEnabled="true"
+                app:srb_clickable="true"
+                app:srb_isIndicator="false"
+                app:srb_minimumStars="1"
+                app:srb_numStars="5"
+                app:srb_rating="3"
+                app:srb_scrollable="false"
+                app:srb_starHeight="@dimen/_8sdp"
+                app:srb_starPadding="@dimen/_2sdp"
+                app:srb_starWidth="@dimen/_8sdp"
+                app:srb_stepSize="1" />
+            <!--<androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBarRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1" />-->
+            <TextView
+                android:id="@+id/textViewReviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/ratingBarRating"
+                android:background="@color/colorPrimaryDark"
+                android:paddingStart="@dimen/_4sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="@string/lorem_4_reviews"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

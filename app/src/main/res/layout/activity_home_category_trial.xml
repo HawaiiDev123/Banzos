@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingTop="30dp"
-                android:text="Welcome to Kauai"
+                android:text="@string/lorem_welcome_to_kauai"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="24sp"
@@ -44,59 +44,70 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
-                android:text="Choose your category"
+                android:text="@string/choose_your_category"
                 android:textAllCaps="true"
                 android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_60sdp"
                 android:layout_alignParentBottom="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingTop="@dimen/_10sdp"
+                android:paddingTop="@dimen/_15sdp"
                 android:weightSum="5">
 
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
                     android:src="@drawable/ic_category_menu_home" />
 
-                   <ImageView
+                <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
                     android:src="@drawable/ic_category_menu_recent_view" />
 
-
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
                     android:src="@drawable/ic_category_menu_favorite" />
 
-
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
                     android:src="@drawable/ic_category_menu_trip_planner" />
 
-
                 <ImageView
+                    android:id="@+id/imageViewMenu"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:contentDescription="@string/app_name"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
                     android:src="@drawable/ic_category_menu_more" />
-
             </LinearLayout>
-
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -110,6 +121,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rl_homeCategory" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
