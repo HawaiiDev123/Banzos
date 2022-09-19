@@ -57,6 +57,10 @@ object URLHelper {
 
     val FETCH_ACTIVITY_DETAILS = HostMainAddress + "activity-details"
 
+    val FETCH_ADVENTURE_LIST = HostMainAddress + "adventure_lists"
+
+    val FETCH_ADVENTURE_DETAILS = HostMainAddress + "adventure_details"
+
 
     //Add APIs
 

@@ -8,16 +8,16 @@ android {
     compileSdkVersion 30
     signingConfigs {
         debug {
-            storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
+           /* storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
             storePassword 'Banzos@Hawaii#2021*'
             keyPassword 'Banzos@Hawaii#2021*'
-            keyAlias = 'banzos_hawaii'
+            keyAlias = 'banzos_hawaii'*/
         }
         release {
-            storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
+            /*storeFile file('J:\\Android\\WorkingProjects\\Banzos\\key_store\\banzos_key_store.jks')
             storePassword 'Banzos@Hawaii#2021*'
             keyPassword 'Banzos@Hawaii#2021*'
-            keyAlias = 'banzos_hawaii'
+            keyAlias = 'banzos_hawaii'*/
         }
     }
     defaultConfig {

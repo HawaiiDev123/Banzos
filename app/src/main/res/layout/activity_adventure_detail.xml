@@ -21,41 +21,7 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/ll_imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical">
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/vp_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tl_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp"
-                        app:tabSelectedTextColor="@android:color/transparent"
-                        app:tabTextColor="@android:color/transparent" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sample6" />
-
-            </FrameLayout>
+            <include layout="@layout/common_slider_layout" />
 
             <TextView
                 android:id="@+id/tv_placeName"
@@ -94,12 +60,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDRegionTitle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="West"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -128,12 +94,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDAddress"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="13342 Ali'i Dr."
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -161,12 +127,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDCityStateZip"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="Kailua-Kona, HI. 96740"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -193,12 +159,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDNearBy"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="31"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -225,12 +191,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDLocationMap"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="Statue, Monument or Tower"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -257,12 +223,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDWebsite"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="www.kingkamehamonument.com"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -289,12 +255,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDPhoneNo"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="808.443.2234"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -321,12 +287,12 @@
                             android:textColor="@color/black" />
 
                         <TextView
+                            android:id="@+id/tvPOIDPricing"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.6"
                             android:background="@color/white"
                             android:padding="10dp"
-                            android:text="$50 per night"
                             android:textSize="12sp" />
 
                     </LinearLayout>
@@ -359,173 +325,14 @@
                             android:layout_weight="0.6"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvPOIDTimeList"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                android:orientation="vertical"
+                                android:background="@color/white" />
 
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Monday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Tuesday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Wednesday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Thursday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Friday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Saturday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="8.00am-4.00pm"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.4"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Sunday"
-                                    android:textSize="12sp" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="0.6"
-                                    android:background="@color/white"
-                                    android:padding="10dp"
-                                    android:text="Closed"
-                                    android:textSize="12sp" />
-                            </LinearLayout>
 
                         </LinearLayout>
 
@@ -535,41 +342,15 @@
             </LinearLayout>
 
             <TextView
-                style="@style/black16spBoldTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:gravity="start"
-                android:text="Highlights" />
-
-            <TextView
+                android:id="@+id/tvPOIDDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/dummy_one_para" />
+                android:text="" />
 
-            <TextView
-                style="@style/black16spBoldTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="start"
-                android:text="General Information" />
-
-            <TextView
-                style="@style/black14spNormalTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/dummy_two_para" />
 
         </LinearLayout>
 
