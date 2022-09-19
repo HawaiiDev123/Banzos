@@ -21,128 +21,7 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="visible">
-
-                <LinearLayout
-                    android:id="@+id/ll_imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:orientation="vertical">
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/vp_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tl_imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp"
-                        app:tabSelectedTextColor="@android:color/transparent"
-                        app:tabTextColor="@android:color/transparent" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sample4" />
-
-
-                <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:background="@drawable/rectangle_bg_primarydark_outline"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_heart_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_location_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_calendar_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_compass_black"
-                        android:tint="@color/white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/white" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="0dp"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_feedback_white" />
-
-                </LinearLayout>
-
-            </FrameLayout>
+            <include layout="@layout/common_slider_layout" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,6 +30,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textViewPrice"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="0.6"
@@ -176,6 +56,7 @@
                         android:src="@drawable/ic_rate" />
 
                     <TextView
+                        android:id="@+id/textViewReviews"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginStart="5dp"
@@ -184,12 +65,11 @@
                         android:text="20 reviews"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
+                android:id="@+id/textViewActivityMainName"
                 style="@style/black14spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -198,6 +78,7 @@
                 android:text="Scuba Diving" />
 
             <TextView
+                android:id="@+id/textViewActivityName"
                 style="@style/primaryDarkColor18spBoldTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,6 +86,7 @@
                 android:text="Scuba Shipwreck Cove" />
 
             <TextView
+                android:id="@+id/textViewDescription"
                 style="@style/black14spNormalTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -250,6 +132,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewCDOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -261,6 +144,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCDDiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -270,7 +154,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -303,6 +186,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewCDYOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -314,6 +198,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCDYDiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -323,7 +208,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -356,6 +240,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewRDOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -367,6 +252,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewRDDiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -376,7 +262,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -409,6 +294,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewFDOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -420,6 +306,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewFDDiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -429,7 +316,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -462,6 +348,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewRAOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -473,6 +360,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewRADiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -482,7 +370,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -515,6 +402,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewJOWOriginal"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -526,6 +414,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewJOWDiscount"
                         style="@style/black12spNormalTextStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -535,7 +424,6 @@
                         android:padding="10dp"
                         android:text="$179"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -544,8 +432,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:visibility="visible">
-
-                <TextView
+                <!--<TextView
                     style="@style/primaryDarkColor12spBoldTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -560,20 +447,18 @@
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:background="@color/grey_5" />
-
-                <TextView
-                    android:id="@+id/tv_addToCart"
-                    style="@style/primaryDarkColor12spBoldTextStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableStart="@drawable/ic_addtocart"
-                    android:drawablePadding="10dp"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Add To Cart"
-                    android:textAllCaps="true" />
+                    android:background="@color/grey_5" />--><TextView
+                android:id="@+id/tv_addToCart"
+                style="@style/primaryDarkColor12spBoldTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_addtocart"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Add To Cart"
+                android:textAllCaps="true" />
 
                 <View
                     android:layout_width="1dp"
@@ -592,7 +477,6 @@
                     android:padding="10dp"
                     android:text="Give as Gift"
                     android:textAllCaps="true" />
-
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -633,7 +517,6 @@
                             android:layout_marginStart="10dp"
                             android:gravity="start"
                             android:text="All Trip Related Information" />
-
                     </LinearLayout>
 
                     <FrameLayout
@@ -660,11 +543,8 @@
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/ic_add_white"
                             android:visibility="visible" />
-
                     </FrameLayout>
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -684,6 +564,7 @@
                     android:text="Trip Information" />
 
                 <TextView
+                    android:id="@+id/textViewTripInformation"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -706,6 +587,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewWhatHarbor"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -713,7 +595,6 @@
                         android:padding="10dp"
                         android:text="Honokohau Harbor"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -732,6 +613,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewSlipNumber"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.4"
@@ -739,7 +621,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -758,6 +639,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCheckInTime"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.4"
@@ -765,7 +647,6 @@
                         android:padding="10dp"
                         android:text="8:30am"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -784,6 +665,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewTripDeparts"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.4"
@@ -791,7 +673,6 @@
                         android:padding="10dp"
                         android:text="9:00am"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -810,6 +691,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewTripReturns"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.4"
@@ -817,7 +699,6 @@
                         android:padding="10dp"
                         android:text="11:00am"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -835,6 +716,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewTripDuration"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -842,7 +724,6 @@
                         android:padding="10dp"
                         android:text="02:00"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -860,6 +741,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCapacity"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -867,7 +749,6 @@
                         android:padding="10dp"
                         android:text="15"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -885,6 +766,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewIncludeInTrip"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -892,7 +774,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -910,6 +791,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewWhatCanYouRent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -917,7 +799,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -935,6 +816,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewWhatBring"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -942,7 +824,6 @@
                         android:padding="10dp"
                         android:text="Towel n Warm clothes"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -960,6 +841,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewDiscount"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -967,7 +849,6 @@
                         android:padding="10dp"
                         android:text="-"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -985,6 +866,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewHandicap"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
@@ -992,7 +874,6 @@
                         android:padding="10dp"
                         android:text="Walker,Wheelchair"
                         android:textSize="12sp" />
-
                 </LinearLayout>
 
                 <TextView
@@ -1004,6 +885,7 @@
                     android:text="Requirements And Restrictions" />
 
                 <TextView
+                    android:id="@+id/textViewReqRes"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1019,6 +901,7 @@
                     android:text="Review Highlights" />
 
                 <TextView
+                    android:id="@+id/textViewSDReviews"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1032,7 +915,6 @@
                     android:layout_marginTop="10dp"
                     android:gravity="start"
                     android:text="Payment Type Accepted" />
-
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -1065,7 +947,6 @@
                             android:layout_marginStart="10dp"
                             android:gravity="start"
                             android:text="Highlights" />
-
                     </LinearLayout>
 
                     <FrameLayout
@@ -1081,6 +962,7 @@
                             android:layout_height="12dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
                             android:src="@drawable/ic_expand_white"
                             android:visibility="gone" />
 
@@ -1090,13 +972,11 @@
                             android:layout_height="12dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
                             android:src="@drawable/ic_add_white"
                             android:visibility="visible" />
-
                     </FrameLayout>
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -1108,12 +988,12 @@
                 android:visibility="gone">
 
                 <TextView
+                    android:id="@+id/textViewHighlights"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:text="@string/dummy_one_para" />
-
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -1146,7 +1026,6 @@
                             android:layout_marginStart="10dp"
                             android:gravity="start"
                             android:text="Policy Detail" />
-
                     </LinearLayout>
 
                     <FrameLayout
@@ -1162,6 +1041,7 @@
                             android:layout_height="12dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
                             android:src="@drawable/ic_expand_white"
                             android:visibility="gone" />
 
@@ -1171,13 +1051,11 @@
                             android:layout_height="12dp"
                             android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
                             android:src="@drawable/ic_add_white"
                             android:visibility="visible" />
-
                     </FrameLayout>
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -1196,6 +1074,7 @@
                     android:text="Cancellation Policy" />
 
                 <TextView
+                    android:id="@+id/textViewCancellationPolicy"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1211,6 +1090,7 @@
                     android:text="Refund Policy" />
 
                 <TextView
+                    android:id="@+id/textViewRefundPolicy"
                     style="@style/black14spNormalTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1247,6 +1127,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewWeather"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
@@ -1257,6 +1138,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewWeatherFee"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
@@ -1265,7 +1147,6 @@
                         android:padding="10dp"
                         android:text="$0 Fee"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1298,10 +1179,10 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewCancellation"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
-
                         android:background="@color/grey_5"
                         android:gravity="center"
                         android:padding="10dp"
@@ -1309,6 +1190,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCancellationFee"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
@@ -1317,7 +1199,6 @@
                         android:padding="10dp"
                         android:text="$0 Fee"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1350,6 +1231,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textViewCruiseShip"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
@@ -1360,6 +1242,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/textViewCruiseShipFee"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0.25"
@@ -1368,9 +1251,7 @@
                         android:padding="10dp"
                         android:text="$100 Fee"
                         android:textColor="@color/black" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
@@ -1385,6 +1266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
                 android:padding="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rate" />
@@ -1411,12 +1293,12 @@
                         android:text="Excellent" />
 
                     <TextView
+                        android:id="@+id/textViewExcellentPercentage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="66%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1435,12 +1317,12 @@
                         android:text="Very Good" />
 
                     <TextView
+                        android:id="@+id/textViewVeryGoodPercentage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="20%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1459,12 +1341,12 @@
                         android:text="Average" />
 
                     <TextView
+                        android:id="@+id/textViewAvergaePercentage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="15%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1483,12 +1365,12 @@
                         android:text="Poor" />
 
                     <TextView
+                        android:id="@+id/textViewPoorPercentage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="05%" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -1507,14 +1389,13 @@
                         android:text="Terrible" />
 
                     <TextView
+                        android:id="@+id/textViewTerriblePercentage"
                         style="@style/primaryColor14spNormalTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="01%" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
@@ -1543,9 +1424,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:tint="@color/white"
-                    app:srcCompat="@drawable/ic_play_button" />
-
+                    app:srcCompat="@drawable/ic_play_button"
+                    app:tint="@color/white" />
             </RelativeLayout>
 
             <TextView
@@ -1560,11 +1440,10 @@
                 android:id="@+id/rv_otherActivities"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-
+                android:layout_margin="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/row_other_activities_list_item" />
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </LinearLayout>

@@ -48,6 +48,7 @@ class HomeActivity : AppBaseActivity() {
         adapterIslandListHome.setListener(object : AdapterIslandListHome.IslandListener {
             override fun onView(islandDetails: IslandDetails) {
                 prefs.setIslandId(islandDetails.mild_id.toString())
+                prefs.setIslandName(islandDetails.title.toString())
                 val intent = Intent(this@HomeActivity, HomeCategoryActivity::class.java)
                 intent.putExtra(AppConstants.INTENT_ISLAND_NAME, islandDetails.title)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

@@ -7,6 +7,9 @@ class CommonSliderDetails : ResponseData() {
     @SerializedName("image_nm")
     var image_nm: String? = null
 
+    @SerializedName("image")
+    var image: String? = null
+
     @SerializedName("type")
     var type: String? = null
 }

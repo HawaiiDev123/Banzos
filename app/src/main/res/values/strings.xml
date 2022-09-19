@@ -67,4 +67,16 @@
     <string name="view_details">View Details</string>
     <string name="title_wildlife">Wildlife</string>
     <string name="hawaiian_wildlife">Hawaiian Wildlife</string>
+    <string name="title_activities_tours">Activities And Tours</string>
+    <string name="lorem_scuba_diving">Scuba Diving:</string>
+    <string name="lorem_scuba_shipwreck_cove">Scuba Shipwreck Cove</string>
+    <string name="lorem__147_00">$147.00</string>
+    <string name="lorem_150">$150</string>
+    <string name="lorem_location_kona">Location: Kona</string>
+    <string name="lorem_duration_02_00_hours">Duration: 02:00 Hours</string>
+    <string name="lorem_20_reviews">20 Reviews</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="give_as_gift">Give as Gift</string>
+    <string name="dollar_some_money">$ %1$s</string>
+    <string name="some_value_percentage">%1$s %%</string>
 </resources>

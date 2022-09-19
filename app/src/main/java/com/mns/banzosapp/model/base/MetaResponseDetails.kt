@@ -12,4 +12,7 @@ class MetaResponseDetails : ResponseData() {
     @SerializedName("image_base_url")
     var image_base_url: String? = null
 
+    @SerializedName("slider_base_url")
+    var slider_base_url: String? = null
+
 }

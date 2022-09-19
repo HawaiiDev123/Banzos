@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_activities"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,32 +15,29 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
-            android:padding="10dp">
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/iv_activityImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="120dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_sample3" />
 
-                <ImageView
-                    android:id="@+id/iv_activityImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sample3" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="-20dp"
-                    android:src="@drawable/ic_top_rated" />
-            </LinearLayout>
-
-        </FrameLayout>
+            <ImageView
+                android:id="@+id/imageViewTopRated"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="-20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_top_rated" />
+        </LinearLayout>
 
         <View
             android:layout_width="1dp"
@@ -57,6 +55,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
                 android:paddingTop="10dp"
@@ -69,16 +68,18 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/textViewActivityMainName"
                         style="@style/primaryColor12spBoldTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Scuba Diving:" />
+                        android:text="@string/lorem_scuba_diving" />
 
                     <TextView
+                        android:id="@+id/textViewActivityName"
                         style="@style/primaryDarkColor14spBoldTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Scuba Shipwreck Cove" />
+                        android:text="@string/lorem_scuba_shipwreck_cove" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -88,41 +89,43 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/textViewOfferPrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="end"
-                        android:text="$147.00"
+                        android:text="@string/lorem__147_00"
                         android:textColor="@color/red_icon_color"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/textViewOriginalPrice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="end"
-                        android:text="$150"
+                        android:text="@string/lorem_150"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
+                android:id="@+id/textViewLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Location: Kona"
+                android:text="@string/lorem_location_kona"
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/textViewDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="Duration: 02:00 Hours"
+                android:text="@string/lorem_duration_02_00_hours"
                 android:textSize="12sp" />
 
             <LinearLayout
@@ -134,19 +137,21 @@
                     android:layout_width="0dp"
                     android:layout_height="20dp"
                     android:layout_weight="0.5"
+                    android:contentDescription="@string/app_name"
                     android:padding="20dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_rate" />
 
                 <TextView
+                    android:id="@+id/textViewReviews"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
-                    android:text="20 Reviews" />
-
+                    android:text="@string/lorem_20_reviews" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/textViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -166,17 +171,18 @@
                 android:visibility="visible">
 
                 <TextView
+                    android:id="@+id/textViewViewDetails"
                     style="@style/primaryDarkColor12spBoldTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableStart="@drawable/ic_document"
                     android:drawablePadding="10dp"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="View Details"
+                    android:text="@string/view_details"
                     android:textAllCaps="true"
-                    android:textSize="8sp" />
+                    android:textSize="@dimen/_6sdp"
+                    app:drawableStartCompat="@drawable/ic_document" />
 
                 <View
                     android:layout_width="1dp"
@@ -189,13 +195,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableStart="@drawable/ic_addtocart"
                     android:drawablePadding="10dp"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Add To Cart"
+                    android:text="@string/add_to_cart"
                     android:textAllCaps="true"
-                    android:textSize="8sp" />
+                    android:textSize="@dimen/_6sdp"
+                    app:drawableStartCompat="@drawable/ic_addtocart" />
 
                 <View
                     android:layout_width="1dp"
@@ -208,18 +214,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableStart="@drawable/ic_gift_card"
                     android:drawablePadding="10dp"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Give as Gift"
+                    android:text="@string/give_as_gift"
                     android:textAllCaps="true"
-                    android:textSize="8sp" />
-
+                    android:textSize="@dimen/_6sdp"
+                    app:drawableStartCompat="@drawable/ic_gift_card" />
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
     <View
@@ -227,5 +230,4 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/grey_10" />
-
 </LinearLayout>

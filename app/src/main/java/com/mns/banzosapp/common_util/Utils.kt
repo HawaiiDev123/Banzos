@@ -10,12 +10,24 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 object Utils {
-
     fun dpToPx(dp: Int): Int {
         return (dp * Resources.getSystem().displayMetrics.density).toInt()
     }
+
+    fun getActivityTabs(): List<ActivityTabs> {
+        val list: MutableList<ActivityTabs> = ArrayList()
+        list.add(ActivityTabs("all", "All Trips"))
+        list.add(ActivityTabs("top rated", "Top Rated"))
+        list.add(ActivityTabs("private trips", "Private Trips"))
+        list.add(ActivityTabs("show cased", "Showcased"))
+        return list
+    }
+
+    data class ActivityTabs(
+        var key: String,
+        var value: String
+    )
 
     fun notNull(text: String?): String {
         return text ?: ""
@@ -98,7 +110,6 @@ object Utils {
             }
         }
     }
-
     /*fun getMonthName(calander: Calendar): String? {
         val month_date = SimpleDateFormat("MMMM", Locale.getDefault())
         return month_date.format(calander.getTime())

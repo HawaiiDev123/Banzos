@@ -51,6 +51,12 @@ object URLHelper {
 
     val FETCH_WILD_LIFE_DETAILS = HostMainAddress + "wild_life_detail"
 
+    val FETCH_ACTIVITY_MAIN_LISTING = HostMainAddress + "activities_list"
+
+    val FETCH_ACTIVITY_LISTING = HostMainAddress + "activities-middle-listing"
+
+    val FETCH_ACTIVITY_DETAILS = HostMainAddress + "activity-details"
+
 
     //Add APIs
 

@@ -67,6 +67,10 @@ abstract class BaseAdapterLoadingAndSearch<T>(var items: MutableList<T>) :
         return metaDetails?.current_page ?: "1"
     }
 
+    fun setPageNumber(pageNumber: String) {
+        metaDetails?.current_page = pageNumber
+    }
+
     fun addItems(savedCardItems: ArrayList<T>) {
         itemsFiltered = savedCardItems
         notifyDataSetChanged()
