@@ -20,6 +20,7 @@ object AppConstants {
     const val INTENT_CITY_TOWN_DETAILS = "cityTownDetails"
     const val INTENT_ISLAND_NAME = "islandName"
     const val INTENT_BEACH_DETAILS = "beachDetails"
+    const val INTENT_ADVENTURE_ITEM = "adventure"
     const val INTENT_WILDLIFE_DETAILS = "wildLifeDetails"
 
 

@@ -15,6 +15,7 @@ import com.mns.banzosapp.model.CityRegionInsideDetails
 class AdapterBestBeachesList(bestBeachesDetailsList: MutableList<CityRegionInsideDetails>) :
     BaseAdapterLoadingAndSearch<CityRegionInsideDetails>(bestBeachesDetailsList) {
     private lateinit var beachListener: BeachListener
+
     fun setListener(beachListener: BeachListener) {
         this.beachListener = beachListener
     }

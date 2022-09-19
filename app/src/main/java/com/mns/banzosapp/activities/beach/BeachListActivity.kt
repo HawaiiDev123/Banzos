@@ -27,6 +27,7 @@ class BeachListActivity : AppBaseActivity(), View.OnClickListener {
     private lateinit var adapterBestBeachesList: AdapterBestBeachesList
     private var firstPosition = 0
     private var secondPosition = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beach_list)
